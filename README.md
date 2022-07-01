@@ -15,17 +15,15 @@
 ![ScreenShot](/img/wordcare.png)
 ### 1. Introducción
 #### 1.1. Propósito
-Crear un sistema con propósito social informativo que permita a un usuario realizar cálculos
-y consultas sobre su huella de carbono, así como descubrir noticias y recomendaciones positivas
-relacionadas con el cuidado del medio ambiente.
-#### 1.2. Alcance del producto
-El sistema a desarrollar pretende motivar a los usuarios que lo utilicen, para lograr esto no solo
-las noticias y tips que se muestran son positivos, sino que la huella de carbono calculada se traducirá
-un “hecho“ positivo en el mundo real.
+Crear un sitio web que permita a un usuario realizar cálculos y consultas sobre su huella de carbono, así como descubrir noticias positivas y recomendaciones positivas relacionadas con el cuidado del medio ambiente y de esta manera impulsar la mejora medioambiental mediante el reconocimiento de cada aporte brindado por las personas.
+#### 1.2. Ámbito del sistema
+Este proyecto está dirigido al público en general, que estén interesados en el cuidado del medio ambiente, los cuales tendrán la posibilidad de ver su huella de carbono de manera descriptiva, entendiendo el impacto positivo que consiguieron con sus aportes.
+
+
+
 ### 2. Descripción General
 #### 2.1 Perspectiva del producto
-El sistema WorldCare será un producto diseñado para trabajar en Web, lo que permitirá en
-fácil acceso y distribución.
+WorldCare es una alternativa amigable en comparción a las calculadoras de huella de carbono, que si bien son de fácil acceso y distribución, WorldCare presenta las contribuciones de los usuarios como impactos positivos hacia el planeta, lo que pretende mostrar el valor que tiene cada aporte hecho por los usuarios y estos se mantengan motivados ha realizar más aportes en un futuro.
 #### 2.2. Funciones del producto 
 
 #### 2.3. Caráteristicas del usuario 
