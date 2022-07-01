@@ -21,12 +21,23 @@ relacionadas con el cuidado del medio ambiente.
 El sistema a desarrollar pretende motivar a los usuarios que lo utilicen, para lograr esto no solo
 las noticias y tips que se muestran son positivos, sino que la huella de carbono calculada se traducirá
 un “hecho“ positivo en el mundo real.
-#### 1.3. Visión general del producto
-##### 1.3.1. Perspectiva del producto
+### 2. Descripción General
+#### 2.1 Perspectiva del producto
 El sistema WorldCare será un producto diseñado para trabajar en Web, lo que permitirá en
 fácil acceso y distribución.
+#### 2.2 Funciones del producto 
 
-### 2. Requerimientos
+#### 2.3 Caráteristicas del usuario 
+
+#### 2.4 Restricciones 
+
+#### 2.5 Suposiciones y Dependencias
+
+#### 2.6 Requisitos Futuros
+
+
+
+### 2. Requesitos Específicos
 #### 2.1 Requisitos Funcionales
 * RF-001: Autenticación de Usuario
 Los usuarios registrados deberán identificarse para poder llevar un perfil de usuario.
@@ -57,16 +68,3 @@ El sistema permitirá al administrador visualizar los datos de los usuarios.
 
 
 #### 2.2 Requisitos No funcionales
-* RNF-001: 
-El sistema debe tener una interfaz de uso intuitivo y sencillo
-* RNF-002: 
-El sistema debe contar con manuales de usuario estructurados adecuadamente.
-* RNF-003: 
-La aplicación web debe poseer un diseño “Responsive” a fin de garantizar la adecuada visualización en múltiples computadores personales, dispositivos tablets y teléfonos inteligentes.
-* RNF-004: 
-Toda funcionalidad del sistema debe responder en un tiempo razonable.
-* RNF-005: 
-Los permisos de acceso al sistema podrán ser cambiados solamente por el administrador de acceso a datos.
-* RNF-006: 
-El despliegue del software 
-
