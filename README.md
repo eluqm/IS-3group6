@@ -12,6 +12,7 @@
 
 ***
 # WorldCare
+![ScreenShot](/img/wordcare.png)
 ### 1. Introducción
 #### 1.1. Propósito
 Crear un sistema con propósito social informativo que permita a un usuario realizar cálculos
@@ -25,20 +26,20 @@ un “hecho“ positivo en el mundo real.
 #### 2.1 Perspectiva del producto
 El sistema WorldCare será un producto diseñado para trabajar en Web, lo que permitirá en
 fácil acceso y distribución.
-#### 2.2 Funciones del producto 
+#### 2.2. Funciones del producto 
 
-#### 2.3 Caráteristicas del usuario 
+#### 2.3. Caráteristicas del usuario 
 
-#### 2.4 Restricciones 
+#### 2.4. Restricciones 
 
-#### 2.5 Suposiciones y Dependencias
+#### 2.5. Suposiciones y Dependencias
 
-#### 2.6 Requisitos Futuros
+#### 2.6. Requisitos Futuros
 
 
 
-### 2. Requesitos Específicos
-#### 2.1 Requisitos Funcionales
+### 3. Requesitos Específicos
+#### 3.1. Requisitos Funcionales
 * RF-001: Autenticación de Usuario
 Los usuarios registrados deberán identificarse para poder llevar un perfil de usuario.
 * RF-002: Registro de Usuario 
@@ -67,4 +68,4 @@ El sistema permitirá al administrador modificar la base de datos, ver registro 
 El sistema permitirá al administrador visualizar los datos de los usuarios.
 
 
-#### 2.2 Requisitos No funcionales
+#### 3.2. Requisitos No funcionales
