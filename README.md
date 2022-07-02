@@ -26,13 +26,8 @@ Este proyecto está dirigido al público en general, que estén interesados en e
 WorldCare es una alternativa amigable en comparción a las calculadoras de huella de carbono, que si bien son de fácil acceso y distribución, WorldCare presenta las contribuciones de los usuarios como impactos positivos hacia el planeta, lo que pretende mostrar el valor que tiene cada aporte hecho por los usuarios y estos se mantengan motivados ha realizar más aportes en un futuro.
 #### 2.2. Funciones del producto 
 
+
 #### 2.3. Caráteristicas del usuario 
-
-#### 2.4. Restricciones 
-
-#### 2.5. Suposiciones y Dependencias
-
-#### 2.6. Requisitos Futuros
 
 
 
@@ -67,3 +62,16 @@ El sistema permitirá al administrador visualizar los datos de los usuarios.
 
 
 #### 3.2. Requisitos No funcionales
+* RNF-001: 
+El sistema debe tener una interfaz de uso intuitivo y sencillo
+* RNF-002: 
+El sistema debe contar con manuales de usuario estructurados adecuadamente.
+* RNF-003: 
+La aplicación web debe poseer un diseño “Responsive” a fin de garantizar la adecuada visualización en múltiples computadores personales, dispositivos tablets y teléfonos inteligentes.
+* RNF-004: 
+Toda funcionalidad del sistema debe responder en un tiempo razonable.
+* RNF-005: 
+Los permisos de acceso al sistema podrán ser cambiados solamente por el administrador de acceso a datos.
+* RNF-006: 
+El despliegue del software 
+
