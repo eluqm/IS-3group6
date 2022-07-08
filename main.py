@@ -1,7 +1,12 @@
-from flask import Flask
-app = Flask(__name__)
+from huellaCarbono import app
+
+if __name__ == '__main__':
+    app.run()
+
+#from flask import Flask
+#app = Flask(__name__)
 
 
-@app.route('/')
-def hola():
-    return "<h1>Welcome to Huella Carbono init project</h1>"
+# qapp.route('/')
+# ef hola():
+#    return "<h1>Welcome to Huella carbono...</h1>"
