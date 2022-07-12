@@ -62,9 +62,16 @@ def login():
 
 
 # VERIFICAR QUE EL USUARIO ESTE LOGEADO
+@auth.before_app_request
 def load_logged_in_user():
     user_id = session.get('user_id')
     if user_id is None:
         g.user = None
     else:
         g.user = User.query.get_or_404(user_id)
+
+
+# LOGOUT
+def logout():
+    session.clear()
+    return redirect(url_for('index'))
