@@ -73,9 +73,10 @@ def load_logged_in_user():
 
 
 # LOGOUT
+@auth.route('/logout')
 def logout():
     session.clear()
-    return redirect(url_for('index'))
+    return redirect(url_for('blog.index'))
 
 
 # INICIAR SESION  REQUERIDO PARA ACTIVIDADES(crear,editar,etc)

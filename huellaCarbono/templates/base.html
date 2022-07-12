@@ -9,12 +9,18 @@
 <body>
     <header>
         <div>
-            <a href="">
+            <a href="{{url_for("blog.index")}}">
                 <h1>Huella Carbono</h1>
             </a>
             <nav>
-                <a href="">Registrar Usuario</a>
-                <a href="">Iniciar Sesión</a>
+                {% if g.user %}
+                    <span>{{g.user.username}}</span>
+                    <a href="{{url_for("auth.logout")}}">Cerrar Sesión</a>
+                {% else %}
+                    <a href="{{url_for("auth.register")}}">Registrar Usuario</a>
+                    <a href="{{url_for("auth.login")}}">Iniciar Sesión</a>
+                {% endif %}
+                
             </nav>
         </div>
     </header>
