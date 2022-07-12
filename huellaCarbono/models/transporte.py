@@ -5,7 +5,7 @@ from huellaCarbono import db
 class Transporte(db.Model):
     __tablename__ = "transportes"
     id = db.Column(db.Integer, primary_key=True)
-    user = db.Column(db.Integer, db.ForeigKey('users.id'), nullable=False)
+    user = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     close_people = db.Column(db.Integer)
     hours_bus_week = db.Column(db.Integer)
     hours_train_week = db.Column(db.Integer)
