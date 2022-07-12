@@ -12,4 +12,7 @@ db = SQLAlchemy(app)
 from huellaCarbono.views.auth import auth
 app.register_blueprint(auth)
 
+from huellaCarbono.views.blog import blog
+app.register_blueprint(blog)
+
 db.create_all()
