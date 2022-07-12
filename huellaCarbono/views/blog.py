@@ -15,3 +15,11 @@ blog = Blueprint('blog', __name__)
 def get_user(id):
     user = User.query.get_or_404(id)
     return user
+
+
+# LISTAR TODAS LAS PUBLICACIONES
+@blog.route("/")
+def index():
+    posts = Post.query.all()
+    db.session.commit()
+    return render_Template('blog/index.html', posts=posts)
