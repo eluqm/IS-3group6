@@ -17,10 +17,7 @@ def register():
         password = request.form.get('password')
 
         user = User(username, generate_password_hash(password))
-        print(not username)
-        print(not password)
 
-        # error = None
         if not username:
             flash('Se requiere nombre de usuario', "error")
         if not password:
@@ -33,6 +30,32 @@ def register():
                 return redirect(url_for('auth.login'))
             else:
                 flash(f'El usuario {username} ya esta registrado', "error")
-                flash('lo siento mucho', "error")
 
     return render_template('auth/register.html')
+
+
+# INICIAR SESION
+@ auth.route('/login', methods=('GET', 'POST'))
+def login():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+
+        error = None
+        findUser = User.query.filter_by(username=username).first()
+
+        if not findUser:
+            error = 'Usuario no registrado'
+            flash('Usuario no Regisrado')
+        else:
+            if not check_password_hash(findUser.password, password):
+                error = 'contraseña incorrecta'
+                flash('contraseña incorrecta')
+
+            if error == None:
+                session.clear()
+                session['user_id'] = findUser.id
+                # return  redirect(url_for('index'))
+            # flash(error)
+
+    return render_template('auth/login.html')
