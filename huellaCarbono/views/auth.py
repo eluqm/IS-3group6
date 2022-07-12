@@ -56,7 +56,7 @@ def login():
             if error == None:
                 session.clear()
                 session['user_id'] = findUser.id
-                return redirect(url_for('index'))  # update line
+                return redirect(url_for('blog.index'))  # update line
             # flash(error)
 
     return render_template('auth/login.html')

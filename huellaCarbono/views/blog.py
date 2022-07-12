@@ -1,6 +1,6 @@
 from crypt import methods
 from flask import(
-    render_Template, Blueprint, flash, g, redirect, request, url_for
+    render_template, Blueprint, flash, g, redirect, request, url_for
 )
 from werkzeug.exceptions import abort
 from huellaCarbono.models.post import Post
@@ -23,14 +23,14 @@ def get_user(id):
 def index():
     posts = Post.query.all()
     db.session.commit()
-    return render_Template('blog/index.html', posts=posts)
+    return render_template('blog/index.html', posts=posts, get_user=get_user)
 
 
 # REGISTRAR UN POST
 @blog.route('/blog/create', methods=('GET', 'POST'))
 @login_required
 def crearPost():
-    if request == 'POST':
+    if request.method == 'POST':
         title = request.form.get('title')
         body = request.form.get('body')
         post = Post(g.user.id, title, body)
@@ -42,4 +42,4 @@ def crearPost():
             db.session.add(post)
             db.session.commit()
             return redirect(url_for('blog.index'))
-    return render_Template('blog/create.html')
+    return render_template('blog/create.html')
