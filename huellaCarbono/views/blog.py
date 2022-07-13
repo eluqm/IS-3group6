@@ -3,6 +3,7 @@ from flask import(
     render_template, Blueprint, flash, g, redirect, request, url_for
 )
 from werkzeug.exceptions import abort
+from huellaCarbono.models.interaccion import Interaccion
 from huellaCarbono.models.post import Post
 from huellaCarbono.models.user import User
 
@@ -28,7 +29,7 @@ def index():
 
 
 # REGISTRAR UN POST
-@blog.route('/blog/create', methods=('GET', 'POST'))
+@blog.route('/blog/create')
 @login_required
 def createPost():
     if request.method == 'POST':
@@ -80,5 +81,15 @@ def updatePost(id):
 def deletePost(id):
     post = get_post(id)
     db.session.delete(post)
+    db.session.commit()
+    return redirect(url_for('blog.index'))
+
+
+@blog.route('/blog/meencanta/<int:id>', methods=('GET', 'POST'))
+@login_required
+def reaccionarPost(id):
+    post = Post.query.get(id)
+    interaccion = Interaccion(g.user.id, post.id)
+    db.session.add(interaccion)
     db.session.commit()
     return redirect(url_for('blog.index'))
