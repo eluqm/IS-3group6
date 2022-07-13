@@ -1,6 +1,8 @@
 from datetime import datetime
 from huellaCarbono import db
-from huellaCarbono.models.interaccion import Interaccion
+#from huellaCarbono.models.interaccion import Interaccion
+from huellaCarbono.models.user import User
+from sqlalchemy.orm import relationship
 
 
 class Post(db.Model):
@@ -11,6 +13,9 @@ class Post(db.Model):
     body = db.Column(db.Text)
     interaccion_number = db.Column(db.Integer)
     created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    #users = relationship(User, cascade="all,delete", backref="children")
+    users = relationship(User, backref=db.backref(
+        "children01", cascade="all,delete"))
 
     def __init__(self, author, title, body) -> None:
         self.author = author

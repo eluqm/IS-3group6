@@ -24,6 +24,7 @@ def get_user(id):
 def index():
     posts = Post.query.all()
     posts = list(reversed(posts))
+    interacciones = Interaccion.query.all()
     db.session.commit()
     return render_template('blog/index.html', posts=posts, get_user=get_user)
 
