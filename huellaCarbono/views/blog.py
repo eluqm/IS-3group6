@@ -1,6 +1,8 @@
 from crypt import methods
+from operator import and_, or_
+from queue import Empty
 from flask import(
-    render_template, Blueprint, flash, g, redirect, request, url_for
+    render_template, Blueprint, flash, g, redirect, request, session, url_for
 )
 from werkzeug.exceptions import abort
 from huellaCarbono.models.interaccion import Interaccion
@@ -26,7 +28,9 @@ def index():
     posts = list(reversed(posts))
     interacciones = Interaccion.query.all()
     db.session.commit()
-    return render_template('blog/index.html', posts=posts, get_user=get_user)
+    db.session.commit()
+    return render_template('blog/index.html', interacciones=interacciones,
+                           posts=posts, get_user=get_user)
 
 
 # REGISTRAR UN POST
@@ -90,7 +94,26 @@ def deletePost(id):
 @login_required
 def reaccionarPost(id):
     post = Post.query.get(id)
-    interaccion = Interaccion(g.user.id, post.id)
-    db.session.add(interaccion)
-    db.session.commit()
+    #findUser = User.query.filter_by(username=username).first()
+    # findInteraccion = Interaccion.query.filter(
+    #    and_(Interaccion.user == g.user.id, Interaccion.post == post.id))
+    # Student.query.filter_by(firstname='Sammy').all()
+    findInteraccion = Interaccion.query.filter(and_(Interaccion.user == g.user.id,
+                                                    Interaccion.post == post.id))
+
+    # finduser = User.query.filter(or_(User.username == 'pedro',
+    #                                 User.username == 'elias'))
+    if len(list(findInteraccion)) == 0:
+        print("No lo encontro")
+        # for row in findInteraccion:
+        #    print("ID: ", row.id)
+        # print(findInteraccion)
+        interaccion = Interaccion(g.user.id, post.id)
+        db.session.add(interaccion)
+        db.session.commit()
+    else:
+        # print(list(findInteraccion))
+        print("Si lo encontro")
+        # for row in findInteraccion:
+        #print("ID: ", row.id)
     return redirect(url_for('blog.index'))
