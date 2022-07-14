@@ -20,7 +20,8 @@ class Post(db.Model):
     def __init__(self, author, title, body) -> None:
         self.author = author
         self.title = title
-        self.interaccion_number = 10  # Interaccion.query.count()
+        self.interaccion_number = Post.query.filter_by(author=1).count()
+  # Interaccion.query.count()
         self.body = body
 
     def __repr__(self) -> str:

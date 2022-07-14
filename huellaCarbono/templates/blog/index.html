@@ -43,11 +43,15 @@
                                  alt="Me encanta" width="25" height="25">
                             {% endif %}
                         </a>
+                        <div class="mensajeCantaidadLikes">
+                            {{post.interaccion_number}} Me encanta
+                        </div>
                         </div>
                         <div class="about">
                             Publicado por {{get_user(post.author).username}}
                             el {{post.created.strftime('%Y-%m-%d')}}
                         </div>
+                        
                     </div>
 
                     <div>

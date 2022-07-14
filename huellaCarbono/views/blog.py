@@ -40,6 +40,7 @@ def InteraccionUserInPosts(posts, interacciones, id):
 # LISTAR TODAS LAS PUBLICACIONES
 @blog.route("/")
 def index():
+    updatePostLikes()
     posts = Post.query.all()
     posts = list(reversed(posts))
     interacciones = Interaccion.query.all()
@@ -50,7 +51,7 @@ def index():
 
 
 # REGISTRAR UN POST
-@blog.route('/blog/create')
+@blog.route('/blog/create', methods=('GET', 'POST'))
 @login_required
 def createPost():
     if request.method == 'POST':
@@ -67,8 +68,9 @@ def createPost():
             return redirect(url_for('blog.index'))
     return render_template('blog/create.html')
 
-
 # OBTENER POST
+
+
 def get_post(id, check_author=True):
     post = Post.query.get(id)
     if post is None:
@@ -94,6 +96,15 @@ def updatePost(id):
             db.session.commit()
             return redirect(url_for('blog.index'))
     return render_template('blog/update.html', post=post)
+
+
+def updatePostLikes():
+    posts = Post.query.all()
+    for post in posts:
+        post.interaccion_number = Interaccion.query.filter_by(
+            post=post.id).count()
+        db.session.add(post)
+        db.session.commit()
 
 
 # ELIMINAR POST
