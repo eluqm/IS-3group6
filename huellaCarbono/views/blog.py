@@ -1,8 +1,9 @@
 from crypt import methods
 from operator import and_, or_
 from queue import Empty
+from sys import flags
 from flask import(
-    render_template, Blueprint, flash, g, redirect, request, session, url_for
+    render_template, Blueprint, flash, g, redirect, request, url_for
 )
 from werkzeug.exceptions import abort
 from huellaCarbono.models.interaccion import Interaccion
@@ -21,6 +22,21 @@ def get_user(id):
     return user
 
 
+# DADO UN USUARIO , VER QUE POST LE GUSTO
+def InteraccionUserInPosts(posts, interacciones, id):
+    listReacciones = []
+    for post in posts:
+        flag = 0
+        for inter in interacciones:
+            if post.id == inter.post and inter.user == id:
+                flag = 1
+                listReacciones.append(True)
+                break
+        if not flag:
+            listReacciones.append(False)
+    return listReacciones
+
+
 # LISTAR TODAS LAS PUBLICACIONES
 @blog.route("/")
 def index():
@@ -30,7 +46,7 @@ def index():
     db.session.commit()
     db.session.commit()
     return render_template('blog/index.html', interacciones=interacciones,
-                           posts=posts, get_user=get_user)
+                           posts=posts, get_user=get_user, functionInter=InteraccionUserInPosts)
 
 
 # REGISTRAR UN POST
@@ -99,7 +115,7 @@ def reaccionarPost(id):
     #    and_(Interaccion.user == g.user.id, Interaccion.post == post.id))
     # Student.query.filter_by(firstname='Sammy').all()
     findInteraccion = Interaccion.query.filter(and_(Interaccion.user == g.user.id,
-                                                    Interaccion.post == post.id))
+                                                    Interaccion.post == post.id)).all()
 
     # finduser = User.query.filter(or_(User.username == 'pedro',
     #                                 User.username == 'elias'))
@@ -114,6 +130,10 @@ def reaccionarPost(id):
     else:
         # print(list(findInteraccion))
         print("Si lo encontro")
+        interacc = Interaccion.query.get(findInteraccion[0].id)
+        db.session.delete(interacc)
+        db.session.commit()
         # for row in findInteraccion:
         #print("ID: ", row.id)
+        # print(findInteraccion[0].id) #THIS IS CORRECT
     return redirect(url_for('blog.index'))

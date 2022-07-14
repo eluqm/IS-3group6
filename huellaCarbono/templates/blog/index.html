@@ -14,15 +14,34 @@
 <!--<p>{{ite.post}}</p>-->
 <!--<p>{{ite.created}}</p>-->
 <!--{%endfor%}-->
-        {% for post in posts %}
+
+        <!--{% for a,b in  lista3|zip(lista6) %}-->
+        <!--    <p>{{a}} {{b}}</p>-->
+        <!--{% endfor %}-->
+    {% set flags_ = InteraccionUserInPosts(posts, interacciones,g.user.id) %}
+    <!--{% for iter in flags_ %}-->
+        <!--<p>{{iter}}</p>-->
+    <!--{% endfor %}-->
+
+
+        {% for post,flag in posts|zip(flags_) %}
 
             <article>
                 <header>
                     <div>
+                       
                         <div class="nameYMegusta">
                             <h1 class="contenido">{{post.title}}</h1>
+
+                            {% if flag == True %}
+                             <a class="contenido" href="{{url_for("blog.reaccionarPost",id=post.id)}}">
+                                <img src="{{url_for("static",filename='img/corazonrojo.png')}}"
+                                     alt="Me encanta" width="25" height="25">
+                            {% else %}
                             <a class="contenido" href="{{url_for("blog.reaccionarPost",id=post.id)}}">
-                            <img src="{{url_for("static",filename='img/corazonblanco.png')}}" alt="Me encanta" width="25" height="25">
+                                <img src="{{url_for("static",filename='img/corazonblanco.png')}}"
+                                 alt="Me encanta" width="25" height="25">
+                            {% endif %}
                         </a>
                         </div>
                         <div class="about">
