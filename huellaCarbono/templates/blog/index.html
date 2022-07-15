@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block header %}
+    <h2> {% block title %}Publicaciones{% endblock %} </h2>
+    {% if g.user %}
+        <a href="{{url_for("blog.createPost")}}">Nueva Publicacion</a>
+    {% endif %}
+{% endblock %}
+
+
+{% block content %}
+<!--{%for ite in interacciones%}-->
+<!--<p>{{ite.id}}</p>-->
+<!--<p>{{ite.user}}</p>-->
+<!--<p>{{ite.post}}</p>-->
+<!--<p>{{ite.created}}</p>-->
+<!--{%endfor%}-->
+
+        <!--{% for a,b in  lista3|zip(lista6) %}-->
+        <!--    <p>{{a}} {{b}}</p>-->
+        <!--{% endfor %}-->
+    {% set flags_ = InteraccionUserInPosts(posts, interacciones,g.user.id) %}
+    <!--{% for iter in flags_ %}-->
+        <!--<p>{{iter}}</p>-->
+    <!--{% endfor %}-->
+
+
+        {% for post,flag in posts|zip(flags_) %}
+
+            <article>
+                <header>
+                    <div>
+                       
+                        <div class="nameYMegusta">
+                            <h1 class="contenido">{{post.title}}</h1>
+
+                            {% if flag == True %}
+                             <a class="contenido" href="{{url_for("blog.reaccionarPost",id=post.id)}}">
+                                <img src="{{url_for("static",filename='img/corazonrojo.png')}}"
+                                     alt="Me encanta" width="25" height="25">
+                            {% else %}
+                            <a class="contenido" href="{{url_for("blog.reaccionarPost",id=post.id)}}">
+                                <img src="{{url_for("static",filename='img/corazonblanco.png')}}"
+                                 alt="Me encanta" width="25" height="25">
+                            {% endif %}
+                        </a>
+                        <div class="mensajeCantaidadLikes">
+                            {{post.interaccion_number}} Me encanta
+                        </div>
+                        </div>
+                        <div class="about">
+                            Publicado por {{get_user(post.author).username}}
+                            el {{post.created.strftime('%Y-%m-%d')}}
+                        </div>
+                        
+                    </div>
+
+                    <div>
+                        {% if g.user.id == post.author %}
+                            <a href="{{url_for("blog.updatePost",id=post.id)}}">
+                                Editar
+                                </a>
+                            <a href="{{url_for("blog.deletePost",id=post.id)}}">Eliminar</a>
+                        {% endif %}
+                    </div>
+                </header>
+                <div>
+                    <p>{{post.body}}</p>
+                </div>
+            </article>
+        {% endfor %}
+{% endblock %}
