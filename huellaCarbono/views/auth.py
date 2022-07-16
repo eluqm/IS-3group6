@@ -1,7 +1,13 @@
+from functools import wraps
+from flask_login import current_user
+from flask import abort
 import functools
 from flask import(
     render_template, Blueprint, flash, g, redirect, request, session, url_for
 )
+
+#from flask_user import login_required, UserManager, UserMixin
+#from flask_login import current_user
 
 from huellaCarbono.models.user import User
 from huellaCarbono import db
@@ -36,7 +42,7 @@ def register():
 
 
 # INICIAR SESION
-@ auth.route('/login', methods=('GET', 'POST'))
+@auth.route('/login', methods=('GET', 'POST'))
 def login():
     if request.method == 'POST':
         username = request.form.get('username')
@@ -56,7 +62,7 @@ def login():
             if error == None:
                 session.clear()
                 session['user_id'] = findUser.id
-                return redirect(url_for('blog.index'))  # update line
+                return redirect(url_for('index.index'))  # update line
             # flash(error)
 
     return render_template('auth/login.html')
@@ -69,14 +75,15 @@ def load_logged_in_user():
     if user_id is None:
         g.user = None
     else:
-        g.user = User.query.get_or_404(user_id)
+        #g.user = User.query.get_or_404(user_id)
+        g.user = User.query.get(user_id)
 
 
 # LOGOUT
 @auth.route('/logout')
 def logout():
     session.clear()
-    return redirect(url_for('blog.index'))
+    return redirect(url_for('index.index'))
 
 
 # INICIAR SESION  REQUERIDO PARA ACTIVIDADES(crear,editar,etc)
@@ -87,3 +94,16 @@ def login_required(view):
             return redirect(url_for('auth.login'))
         return view(**kwargs)
     return wrapped_view
+
+
+def admin_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kws):
+        is_admin = getattr(g.user, 'username', False)
+        if is_admin != 'admin':
+            # if not is_admin:
+            # abort(401)
+            # return render_template('404.html'), 404
+            return render_template('errorPages/401.html'), 401
+        return f(*args, **kws)
+    return decorated_function

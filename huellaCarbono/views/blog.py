@@ -5,21 +5,20 @@ from sys import flags
 from flask import(
     render_template, Blueprint, flash, g, redirect, request, url_for
 )
+from flask_security import Security, roles_required, roles_accepted
+#from flask_user import roles_required, UserManager
+
+
 from werkzeug.exceptions import abort
 from huellaCarbono.models.interaccion import Interaccion
 from huellaCarbono.models.post import Post
 from huellaCarbono.models.user import User
 
 from huellaCarbono.views.auth import login_required
+from huellaCarbono.views.auth import admin_required
 from huellaCarbono import db
 
-blog = Blueprint('blog', __name__)
-
-
-# OBTENER UN USUARIO
-def get_user(id):
-    user = User.query.get_or_404(id)
-    return user
+blog = Blueprint('blog', __name__, url_prefix='/blog')
 
 
 # DADO UN USUARIO , VER QUE POST LE GUSTO
@@ -36,8 +35,16 @@ def InteraccionUserInPosts(posts, interacciones, id):
             listReacciones.append(False)
     return listReacciones
 
+# OBTENER UN USUARIO
+
+
+def get_user(id):
+    user = User.query.get_or_404(id)
+    return user
 
 # LISTAR TODAS LAS PUBLICACIONES
+
+
 @blog.route("/")
 def index():
     updatePostLikes()
@@ -53,6 +60,9 @@ def index():
 # REGISTRAR UN POST
 @blog.route('/blog/create', methods=('GET', 'POST'))
 @login_required
+# @roles_required('admin')
+# @roles_accepted('admin')
+# @admin_required
 def createPost():
     if request.method == 'POST':
         title = request.form.get('title')
