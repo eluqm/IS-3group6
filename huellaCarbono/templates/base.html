@@ -20,7 +20,7 @@
             <nav>
                 <a href="{{url_for("blog.index")}}">Publicaciones</a>
                 {% if g.user.username == 'admin' %}
-                    <a href="{{url_for("blog.index")}}">Crear Clase Publicaciones</a>
+                    <a href="{{url_for("blog.createClasePublicacion")}}">Crear Clase Publicaciones</a>
                 {% endif %}
                 {% if g.user %}
                     <img src="{{url_for("static",filename='img/user.png')}}" alt="">
