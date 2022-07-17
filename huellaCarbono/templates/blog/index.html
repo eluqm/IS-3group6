@@ -42,10 +42,13 @@
                                 <img src="{{url_for("static",filename='img/corazonblanco.png')}}"
                                  alt="Me encanta" width="25" height="25">
                             {% endif %}
-                        </a>
-                        <div class="mensajeCantaidadLikes">
-                            {{post.interaccion_number}} Me encanta
-                        </div>
+                            </a>
+                            <div class="mensajeCantaidadLikes contenido">
+                                {{post.interaccion_number}} Me encanta
+                            </div>
+                            <div class="contenido">
+                                {{getTipoPublicacion(post.clase_post).nombre}}
+                            </div>
                         </div>
                         <div class="about">
                             Publicado por {{get_user(post.author).username}}

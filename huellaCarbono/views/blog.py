@@ -5,21 +5,22 @@ from sys import flags
 from flask import(
     render_template, Blueprint, flash, g, redirect, request, url_for
 )
+from flask_security import Security, roles_required, roles_accepted
+#from flask_user import roles_required, UserManager
+
+
 from werkzeug.exceptions import abort
 from huellaCarbono.models.interaccion import Interaccion
 from huellaCarbono.models.post import Post
 from huellaCarbono.models.user import User
+from huellaCarbono.models.clasePublicacion import ClasePublicacion
+
 
 from huellaCarbono.views.auth import login_required
+from huellaCarbono.views.auth import admin_required
 from huellaCarbono import db
 
-blog = Blueprint('blog', __name__)
-
-
-# OBTENER UN USUARIO
-def get_user(id):
-    user = User.query.get_or_404(id)
-    return user
+blog = Blueprint('blog', __name__, url_prefix='/blog')
 
 
 # DADO UN USUARIO , VER QUE POST LE GUSTO
@@ -36,8 +37,20 @@ def InteraccionUserInPosts(posts, interacciones, id):
             listReacciones.append(False)
     return listReacciones
 
+# OBTENER UN USUARIO
+
+
+def get_user(id):
+    user = User.query.get_or_404(id)
+    return user
+
+
+def getTipoPublicacion(id):
+    return ClasePublicacion.query.get(id)
 
 # LISTAR TODAS LAS PUBLICACIONES
+
+
 @blog.route("/")
 def index():
     updatePostLikes()
@@ -47,17 +60,26 @@ def index():
     db.session.commit()
     db.session.commit()
     return render_template('blog/index.html', interacciones=interacciones,
-                           posts=posts, get_user=get_user, functionInter=InteraccionUserInPosts)
+                           posts=posts, get_user=get_user, functionInter=InteraccionUserInPosts,
+                           getTipoPublicacion=getTipoPublicacion)
 
 
 # REGISTRAR UN POST
 @blog.route('/blog/create', methods=('GET', 'POST'))
 @login_required
+# @roles_required('admin')
+# @roles_accepted('admin')
+# @admin_required
 def createPost():
+    clasesPub = ClasePublicacion.query.all()
+    db.session.commit()
     if request.method == 'POST':
         title = request.form.get('title')
         body = request.form.get('body')
-        post = Post(g.user.id, title, body)
+        tipoP = request.form.get('tipo')
+        print("RECOLECCIONNNNNN")
+        print(tipoP)
+        post = Post(g.user.id, title, body, tipoP)
 
         error = None
         if not title:
@@ -66,11 +88,29 @@ def createPost():
             db.session.add(post)
             db.session.commit()
             return redirect(url_for('blog.index'))
-    return render_template('blog/create.html')
+    return render_template('blog/create.html', clasesPub=clasesPub)
+
+
+@blog.route('/blog/createClasePublicación', methods=('GET', 'POST'))
+@login_required
+@admin_required
+def createClasePublicacion():
+    clasesPub = ClasePublicacion.query.all()
+    db.session.commit()
+    if request.method == 'POST':
+        name = request.form.get('name')
+        clasePublicacion = ClasePublicacion(name)
+        if not name:
+            flash('Se requiere un nombre para continuar')
+        else:
+            db.session.add(clasePublicacion)
+            db.session.commit()
+            return redirect(url_for('blog.createClasePublicacion'))
+
+    return render_template('blog/createClasePublicacion.html', clasesPub=clasesPub)
+
 
 # OBTENER POST
-
-
 def get_post(id, check_author=True):
     post = Post.query.get(id)
     if post is None:

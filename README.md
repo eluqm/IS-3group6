@@ -89,8 +89,20 @@ _Mysql Workbench_
 ```
 create database huella_carbono;
 ```
+
+_Dependencias_
+
+```
+pip install Flask
+pip install PyMySQL
+pip install Flask-SQLAlchemy
+pip install Flask_User
+```
+
 ### 5. Mockups
+
 link: https://app.moqups.com/MCtx2luPEu6uTzCcZyKaxHwRoK6f3Dw2/view/page/ae973f342
 
-### 6. Trello 
+### 6. Trello
+
 link: https://trello.com/b/3FwjQZeS/worldcare

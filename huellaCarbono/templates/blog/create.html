@@ -11,6 +11,15 @@
             <input type="text" name="title" id="title" requerid>
             <label for="body">Contenido</label>
             <textarea name="body" id="body" cols="30" rows="10"></textarea>
+
+
+            <select name="tipo" id="tipo">
+                {% for iter in clasesPub %}
+                      <h5>{{iter.nombre}}</h5>
+                      <option value="{{iter.id}}">{{iter.nombre}}</option>
+                 {% endfor %}
+                
+              </select>
             <input type="submit" value="Guardar">
         </form>
 {% endblock %}
