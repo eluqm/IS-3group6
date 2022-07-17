@@ -7,7 +7,7 @@ const LivingPlace = () => {
     <Layout>
         <h3> Vivienda </h3>
         <Link to="/calculator">
-          <button>Regresar</button>
+          <button className='primary-btn'>Regresar</button>
         </Link>
     </Layout>
   )

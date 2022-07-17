@@ -9,9 +9,9 @@ const CalculatorScreen = () => {
         <h2>Calcula tu huella de carbono</h2>
         <div className='options-container'>
             <div className='option-btn'>
-                {/* <Link to="/calculator/personal-information"> */}
+                <Link to="/calculator/personal-info">
                     <img src={require("../../assets/images/icons8-documento-96.png")} alt="" />
-                {/* </Link> */}
+                </Link>
             </div>
 
             <div className='option-btn'>

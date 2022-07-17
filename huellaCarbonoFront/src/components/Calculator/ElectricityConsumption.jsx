@@ -7,7 +7,7 @@ const ElectricityConsumption = () => {
     <Layout>
         <h3> Consumo de Electricidad </h3>
         <Link to="/calculator">
-          <button>Regresar</button>
+          <button className='primary-btn'>Regresar</button>
         </Link>
 
     </Layout>
