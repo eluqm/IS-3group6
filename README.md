@@ -57,9 +57,11 @@ Los encargados son Edward Luis Huayllasco y Jorge Alfredo Tito, convertiran los 
 WorldCare es una alternativa amigable en comparción a las calculadoras de huella de carbono, que si bien son de fácil acceso y distribución, WorldCare presenta las contribuciones de los usuarios como impactos positivos hacia el planeta, lo que pretende mostrar el valor que tiene cada aporte hecho por los usuarios y estos se mantengan motivados ha realizar más aportes en un futuro.
 
 #### 3.2. Funciones del producto
-
+##### 3.2.1 Diagrama de Casos de Uso
+![ScreenShot](/img/casosdeuso.png)
 #### 3.3. Caráteristicas del usuario
 
+![ScreenShot](/img/usuario.png)
 ### 4. Requesitos Específicos
 
 #### 4.1. Requisitos Funcionales
@@ -103,8 +105,6 @@ WorldCare es una alternativa amigable en comparción a las calculadoras de huell
   Toda funcionalidad del sistema debe responder en un tiempo razonable.
 - RNF-005:
   Los permisos de acceso al sistema podrán ser cambiados solamente por el administrador de acceso a datos.
-- RNF-006:
-  El despliegue del software
 
 ### 5. Prerequisitos
 
@@ -124,9 +124,24 @@ pip install Flask_User
 ```
 
 ### 6. Mockups
+En el siguiente link puedes encontrar los mockups realizados en Firgma: https://www.figma.com/file/N3zAk2LUTZ1jyBc3trfgUm/WorldCare?node-id=0%3A1
+#### 6.1. Home
+![ScreenShot](/img/home1.png)
+![ScreenShot](/img/home2.png)
+![ScreenShot](/img/descubre.png)
+#### 6.2. Login
+![ScreenShot](/img/login.png)
+#### 6.3 Registro
+![ScreenShot](/img/registrate.png)
+#### 6.4 Publicaciones
+![ScreenShot](/img/publicaciones.png)
+#### 6.5 Sección Informativa
+![ScreenShot](/img/informate1.png)
+![ScreenShot](/img/informate2.png)
 
-link: https://app.moqups.com/MCtx2luPEu6uTzCcZyKaxHwRoK6f3Dw2/view/page/ae973f342
 
-### 6. Trello
+### 7. Trello
+Para la gestión del proyecto y control del trabajo colaborativo de los integrantes se está trabajando con Trello
+![ScreenShot](/img/trello.png)
+Link: https://trello.com/invite/b/3FwjQZeS/51ba1f1450b22478601e12e3090aba5c/worldcare
 
-link: https://trello.com/b/3FwjQZeS/worldcare
