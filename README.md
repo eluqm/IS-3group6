@@ -52,6 +52,14 @@ Los encargados son Edward Luis Huayllasco y Jorge Alfredo Tito, convertiran los 
 
 WorldCare es una alternativa amigable en comparción a las calculadoras de huella de carbono, que si bien son de fácil acceso y distribución, WorldCare presenta las contribuciones de los usuarios como impactos positivos hacia el planeta, lo que pretende mostrar el valor que tiene cada aporte hecho por los usuarios y estos se mantengan motivados ha realizar más aportes en un futuro.
 
+### Funciones del producto
+
+#### Diagrama de Casos de Uso
+![ScreenShot](img/casosdeuso.png)
+#### Caráteristicas del usuario
+
+![ScreenShot](/img/usuario.png)
+
 ## Requesitos Específicos
 
 ***
@@ -162,9 +170,20 @@ create database huella_carbono;
 ## Diseño del Sistema
 
 ***
-El protetipo del producto se realizó en con la herramienta Figma, la cual esta a disposicion en el siguiente enlace:
-
-<https://app.moqups.com/MCtx2luPEu6uTzCcZyKaxHwRoK6f3Dw2/view/page/ae973f342>
+En el siguiente link puedes encontrar los mockups realizados en Firgma: https://www.figma.com/file/N3zAk2LUTZ1jyBc3trfgUm/WorldCare?node-id=0%3A1
+#### 6.1. Home
+![ScreenShot](/img/home1.png)
+![ScreenShot](/img/home2.png)
+![ScreenShot](/img/descubre.png)
+#### 6.2. Login
+![ScreenShot](/img/login.png)
+#### 6.3 Registro
+![ScreenShot](/img/registrate.png)
+#### 6.4 Publicaciones
+![ScreenShot](/img/publicaciones.png)
+#### 6.5 Sección Informativa
+![ScreenShot](/img/informate1.png)
+![ScreenShot](/img/informate2.png)
 
 ## Metodologia de desarrollo
 
