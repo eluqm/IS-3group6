@@ -1,5 +1,5 @@
 from functools import wraps
-from flask_login import current_user
+#from flask_login import current_user
 from flask import abort
 import functools
 from flask import(
