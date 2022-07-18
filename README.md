@@ -124,9 +124,19 @@ pip install Flask_User
 ```
 
 ### 6. Mockups
+En el siguiente link puedes encontrar los mockups realizados en Firgma: https://www.figma.com/file/N3zAk2LUTZ1jyBc3trfgUm/WorldCare?node-id=0%3A1
+#### 6.1. Home
+![ScreenShot](/img/home1.png)
+![ScreenShot](/img/home2.png)
+#### 6.2. Login
+![ScreenShot](/img/login.png)
+#### 6.3 Registro
+![ScreenShot](/img/registrate.png)
+#### 6.4 Publicaciones
+![ScreenShot](/img/publicaciones.png)
 
-link: https://app.moqups.com/MCtx2luPEu6uTzCcZyKaxHwRoK6f3Dw2/view/page/ae973f342
 
-### 6. Trello
+### 7. Trello
+Para la gestión del proyecto y control del trabajo colaborativo de los integrantes se está trabajando con Trello
 
-link: https://trello.com/b/3FwjQZeS/worldcare
+Link: https://trello.com/invite/b/3FwjQZeS/51ba1f1450b22478601e12e3090aba5c/worldcare
