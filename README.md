@@ -211,3 +211,20 @@ Link: https://trello.com/invite/b/3FwjQZeS/51ba1f1450b22478601e12e3090aba5c/worl
 
 La arquitectura que se esta utilizando en este ŕoyecto es con MVC
 ![ScreenShot](/img/mvc.png)
+
+### Modeo Vista COntrolador
+
+Model View Controller - MVC, el Modelo-vista-controlador, es un patrón de arquitectura de software, que separa los datos y la lógica de negocio de una aplicación de su representación y el módulo encargado de gestionar los eventos y las comunicaciones. Para ello MVC propone la construcción de tres componentes distintos que son el modelo, la vista y el controlador, es decir, por un lado define componentes para la representación de la información, y por otro lado para la interacción del usuario. El patrón de diseño MVC es soportado en Flask se divide en tres capas:
+
+## Capa Modelo
+
+- Desarrollado con SQLAlchemy..
+- Select, Insert, Delete - Flask-SQLAlchemy).
+
+## Capa Vista
+
+- Sistema de plantillas Jinja2 (Capa vista).
+
+## Capa COntrolador
+
+- Blueprint, render_template
