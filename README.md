@@ -26,19 +26,43 @@ Crear un sitio web que permita a un usuario realizar cálculos y consultas sobre
 
 Este proyecto está dirigido al público en general, que estén interesados en el cuidado del medio ambiente, los cuales tendrán la posibilidad de ver su huella de carbono de manera descriptiva, entendiendo el impacto positivo que consiguieron con sus aportes.
 
-### 2. Descripción General
+### 2. Recursos Humanos
 
-#### 2.1 Perspectiva del producto
+La división de cada integrante en un ámbito en específico, para así poder distribuir el trabajo de una manera mucho más fácil y equitativa, utilizando la metodología Scrum, decidimos dar los siguientes cargos a cada integrante:
+
+#### 2.1. Scrum Master
+
+El Scrum Master de nuestro equipo es Kate Itati Olazabal Chavez ya que fue quien tuvo la idea sobre este proyecto, ella será la encargada de guiarnos y resolver las dudas que nos puedan surgir en el desarrollo del proyecto.
+
+#### 2.2. Product Owner
+
+El Product Owner de nuestro equipo es Angel Concha Layme, él será la voz del cliente, en otras palabras, será el enlace entre un cliente y nuestro equipo de desarrollo. Él lleva la visión del producto y lo que se necesita desarrollar, además de gestionar los comentarios de los usuarios.
+
+#### 2.3. Scrum Team
+
+El Scrum Team estará compuesto por Angela Aquise Santos, Edward Luis Huayllasco Carlos, Jorge Alfredo Tito, quienes serán los encargados de convertir World Care en un software entregable. En este caso decidimos dividir el trabajo de cada uno de nosotros en dos partes.
+
+- Diseñador:
+
+Quien se encargara de generar el diseño arquitectonico y el diseño detallado del sistema será Angela Aquise Santos, basandose en los requisitos.
+
+- Programadores:
+
+Los encargados son Edward Luis Huayllasco y Jorge Alfredo Tito, convertiran los requisitos del sistema en código fuente ejecutable utilizando uno o más lenguajes de programación, así como herramientas de apoyo.
+
+### 3. Descripción General
+
+#### 3.1. Perspectiva del producto
 
 WorldCare es una alternativa amigable en comparción a las calculadoras de huella de carbono, que si bien son de fácil acceso y distribución, WorldCare presenta las contribuciones de los usuarios como impactos positivos hacia el planeta, lo que pretende mostrar el valor que tiene cada aporte hecho por los usuarios y estos se mantengan motivados ha realizar más aportes en un futuro.
 
-#### 2.2. Funciones del producto
+#### 3.2. Funciones del producto
 
-#### 2.3. Caráteristicas del usuario
+#### 3.3. Caráteristicas del usuario
 
-### 3. Requesitos Específicos
+### 4. Requesitos Específicos
 
-#### 3.1. Requisitos Funcionales
+#### 4.1. Requisitos Funcionales
 
 - RF-001: Autenticación de Usuario
   Los usuarios registrados deberán identificarse para poder llevar un perfil de usuario.
@@ -67,7 +91,7 @@ WorldCare es una alternativa amigable en comparción a las calculadoras de huell
 - RF-013: Gestión de Usuarios
   El sistema permitirá al administrador visualizar los datos de los usuarios.
 
-#### 3.2. Requisitos No funcionales
+#### 4.2. Requisitos No funcionales
 
 - RNF-001:
   El sistema debe tener una interfaz de uso intuitivo y sencillo
@@ -82,15 +106,27 @@ WorldCare es una alternativa amigable en comparción a las calculadoras de huell
 - RNF-006:
   El despliegue del software
 
-### 4. Prerequisitos
+### 5. Prerequisitos
 
 _Mysql Workbench_
 
 ```
 create database huella_carbono;
 ```
-### 5. Mockups
+
+_Dependencias_
+
+```
+pip install Flask
+pip install PyMySQL
+pip install Flask-SQLAlchemy
+pip install Flask_User
+```
+
+### 6. Mockups
+
 link: https://app.moqups.com/MCtx2luPEu6uTzCcZyKaxHwRoK6f3Dw2/view/page/ae973f342
 
-### 6. Trello 
+### 6. Trello
+
 link: https://trello.com/b/3FwjQZeS/worldcare
