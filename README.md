@@ -30,15 +30,15 @@ Este proyecto está dirigido al público en general, que estén interesados en e
 
 La división de cada integrante para que aporte en un ámbito en específico es muy importante ya que de esta manera podemos distribuir el trabajo de una manera mucho más fácil y equitativa, por eso usando la metodología Scrum decidimos distribuir el grupo de la siguiente manera:
 
-#### 2.1 Scrum Master
+#### 2.1. Scrum Master
 
 El Scrum Master de nuestro equipo es Kate Itati Olazabal Chavez ya que fue quien nos dio la idea de realizar este proyecto, por eso desempeña este cargo ya que podr guiarnos y al mismo tiempo resolver cualquier problema que surja.
 
-#### 2.2 Product Owner
+#### 2.2. Product Owner
 
 El Product Owner de nuestro equipo es Angela Concha Layme, él será la voz del cliente, en otras palabras, será el enlace entre un cliente y nuestro equipo de desarrollo. Él lleva la visión del producto y lo que se necesita desarrollar, además de gestionar los comentarios de los usuarios.
 
-#### 2.3 Scrum Team
+#### 2.3. Scrum Team
 
 El Scrum Team estara compuesto por Angela Aquise Santos, Edward Luis Huayllasco Carlos, Jorge Alfredo Tito, quienes serán los encargados de convertir World Care en un software entregable. En este caso decidimos dividir el trabajo de cada uno de nosotros en dos partes.
 
@@ -52,7 +52,7 @@ Los encargados son Edward Luis Huayllasco y Jorge Alfredo Tito, que tienen la ca
 
 ### 3. Descripción General
 
-#### 3.1 Perspectiva del producto
+#### 3.1. Perspectiva del producto
 
 WorldCare es una alternativa amigable en comparción a las calculadoras de huella de carbono, que si bien son de fácil acceso y distribución, WorldCare presenta las contribuciones de los usuarios como impactos positivos hacia el planeta, lo que pretende mostrar el valor que tiene cada aporte hecho por los usuarios y estos se mantengan motivados ha realizar más aportes en un futuro.
 
