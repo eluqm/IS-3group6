@@ -221,10 +221,99 @@ Model View Controller - MVC, el Modelo-vista-controlador, es un patrón de arqui
 - Desarrollado con SQLAlchemy..
 - Select, Insert, Delete - Flask-SQLAlchemy).
 
+```
+class User(db.Model):
+    __tablename__ = 'users'
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(50))
+    password = db.Column(db.Text)
+    rol = db.Column(db.Integer, db.ForeignKey(
+        'roles.id'), nullable=False, default=2)
+    #roles = db.relationship('Role', secondary='user_roles')
+    roles = relationship(Role, backref=db.backref(
+        "children04", cascade="all,delete"))
+```
+
 ### Capa Vista
 
 - Sistema de plantillas Jinja2 (Capa vista).
 
+```
+{% extends "base.html" %}
+{% block header %}
+    <h2> {% block title %}Publicaciones{% endblock %} </h2>
+    {% if g.user %}
+        <a href="{{url_for("blog.createPost")}}">Nueva Publicacion</a>
+    {% endif %}
+{% endblock %}
+
+    {% set flags_ = InteraccionUserInPosts(posts, interacciones,g.user.id) %}
+
+        {% for post,flag in posts|zip(flags_) %}
+            <article>
+                <header>
+                    <div>
+
+                        <div class="nameYMegusta">
+                            <h1 class="contenido">{{post.title}}</h1>
+
+                            {% if flag == True %}
+                             <a class="contenido" href="{{url_for("blog.reaccionarPost",id=post.id)}}">
+                                <img src="{{url_for("static",filename='img/corazonrojo.png')}}"
+                                     alt="Me encanta" width="25" height="25">
+                            {% else %}
+                            <a class="contenido" href="{{url_for("blog.reaccionarPost",id=post.id)}}">
+                                <img src="{{url_for("static",filename='img/corazonblanco.png')}}"
+                                 alt="Me encanta" width="25" height="25">
+                            {% endif %}
+                            </a>
+                            <div class="mensajeCantaidadLikes contenido">
+                                {{post.interaccion_number}} Me encanta
+                            </div>
+                            <div class="contenido">
+                                {{getTipoPublicacion(post.clase_post).nombre}}
+                            </div>
+                        </div>
+                        <div class="about">
+                            Publicado por {{get_user(post.author).username}}
+                            el {{post.created.strftime('%Y-%m-%d')}}
+                        </div>
+
+                    </div>
+
+                    <div>
+                        {% if g.user.id == post.author %}
+                            <a href="{{url_for("blog.updatePost",id=post.id)}}">
+                                Editar
+                                </a>
+                            <a href="{{url_for("blog.deletePost",id=post.id)}}">Eliminar</a>
+                        {% endif %}
+                    </div>
+                </header>
+                <div>
+                    <p>{{post.body}}</p>
+                </div>
+            </article>
+        {% endfor %}
+{% endblock %}
+```
+
 ### Capa Controlador
 
 - Blueprint, render_template
+
+```
+blog = Blueprint('blog', __name__, url_prefix='/blog')
+
+@blog.route("/")
+def index():
+    updatePostLikes()
+    posts = Post.query.all()
+    posts = list(reversed(posts))
+    interacciones = Interaccion.query.all()
+    db.session.commit()
+    db.session.commit()
+    return render_template('blog/index.html', interacciones=interacciones,
+                           posts=posts, get_user=get_user, functionInter=InteraccionUserInPosts,
+                           getTipoPublicacion=getTipoPublicacion)
+```
