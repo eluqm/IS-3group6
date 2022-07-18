@@ -317,3 +317,22 @@ def index():
                            posts=posts, get_user=get_user, functionInter=InteraccionUserInPosts,
                            getTipoPublicacion=getTipoPublicacion)
 ```
+
+## Contribuidores
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+  <table align="center">
+    <tr>
+      <td align="center"><a href="https://github.com/Angel1612"><img src="https://avatars.githubusercontent.com/u/48967493?v=4" width="50px;" alt=""/><br /><sub><b>Angel Concha</b></sub></a><br /><a href="https://github.com/Angel1612" title="Code">
+      <td align="center"><a href="https://github.com/Noodle96"><img src="https://avatars.githubusercontent.com/u/21202542?v=4" width="50px;" alt=""/><br /><sub><b>Jorge Tito</b></sub></a><br /><a href="https://github.com/Noodle96" title="Code">
+      </td>
+      <td align="center"><a href="https://github.com/KateOlaz"><img src="https://avatars.githubusercontent.com/u/49486445?v=4" width="50px;" alt=""/><br /><sub><b>Kate Olazabal</b></sub></a><br /><a href="https://github.com/KateOlaz" title="Code">
+      <td align="center"><a href="https://github.com/Angela18"><img src="https://avatars.githubusercontent.com/u/64268406?v=4" width="50px;" alt=""/><br /><sub><b>Angela Aquise</b></sub></a><br /><a href="https://github.com/Angela18" title="Code">
+      </td>
+      <td align="center"><a href="https://github.com/ehuayllasco"><img src="https://avatars.githubusercontent.com/u/64268570?v=4" width="50px;" alt=""/><br /><sub><b>Edwar Huayllasco</b></sub></a><br /><a href="https://github.com/ehuayllasco" title="Code">
+      </td>
+    </tr>
+  </table>
