@@ -36,7 +36,7 @@ El Scrum Master de nuestro equipo es Kate Itati Olazabal Chavez ya que fue quien
 
 #### 2.2. Product Owner
 
-El Product Owner de nuestro equipo es Angela Concha Layme, él será la voz del cliente, en otras palabras, será el enlace entre un cliente y nuestro equipo de desarrollo. Él lleva la visión del producto y lo que se necesita desarrollar, además de gestionar los comentarios de los usuarios.
+El Product Owner de nuestro equipo es Angel Concha Layme, él será la voz del cliente, en otras palabras, será el enlace entre un cliente y nuestro equipo de desarrollo. Él lleva la visión del producto y lo que se necesita desarrollar, además de gestionar los comentarios de los usuarios.
 
 #### 2.3. Scrum Team
 
