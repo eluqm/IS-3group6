@@ -47,7 +47,11 @@ Los encargados son Edward Luis Huayllasco y Jorge Alfredo Tito, convertiran los 
 ## Descripción General
 
 ***
-
+### LLuvia de Ideas
+Primeras nociones y aportes de cada uno de los integrantes del grupo para la creacion y planificacion de nuestra Web.
+<p align="center">
+  <img src='./img/lluviadeideas.jpg' width='500px' />
+</p>
 ### Perspectiva del producto
 
 WorldCare es una alternativa amigable en comparción a las calculadoras de huella de carbono, que si bien son de fácil acceso y distribución, WorldCare presenta las contribuciones de los usuarios como impactos positivos hacia el planeta, lo que pretende mostrar el valor que tiene cada aporte hecho por los usuarios y estos se mantengan motivados ha realizar más aportes en un futuro.
