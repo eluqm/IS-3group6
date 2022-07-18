@@ -169,5 +169,6 @@ El protetipo del producto se realizó en con la herramienta Figma, la cual esta 
 ## Metodologia de desarrollo
 
 ***
-
-<https://trello.com/b/3FwjQZeS/worldcare>
+Para la gestión del proyecto y control del trabajo colaborativo de los integrantes se está trabajando con Trello
+![ScreenShot](/img/trello.png)
+Link: https://trello.com/invite/b/3FwjQZeS/51ba1f1450b22478601e12e3090aba5c/worldcare
