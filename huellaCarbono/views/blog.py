@@ -1,11 +1,11 @@
-from crypt import methods
+#from crypt import methods
 from operator import and_, or_
 from queue import Empty
 from sys import flags
 from flask import(
     render_template, Blueprint, flash, g, redirect, request, url_for
 )
-from flask_security import Security, roles_required, roles_accepted
+#from flask_security import Security, roles_required, roles_accepted
 #from flask_user import roles_required, UserManager
 
 
