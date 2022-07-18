@@ -58,7 +58,10 @@ WorldCare es una alternativa amigable en comparción a las calculadoras de huell
 
 #### 3.2. Funciones del producto
 
+##### 3.2.1 Diagrama de Casos de Uso
+
 #### 3.3. Caráteristicas del usuario
+
 
 ### 4. Requesitos Específicos
 
@@ -103,8 +106,6 @@ WorldCare es una alternativa amigable en comparción a las calculadoras de huell
   Toda funcionalidad del sistema debe responder en un tiempo razonable.
 - RNF-005:
   Los permisos de acceso al sistema podrán ser cambiados solamente por el administrador de acceso a datos.
-- RNF-006:
-  El despliegue del software
 
 ### 5. Prerequisitos
 
@@ -138,5 +139,6 @@ En el siguiente link puedes encontrar los mockups realizados en Firgma: https://
 
 ### 7. Trello
 Para la gestión del proyecto y control del trabajo colaborativo de los integrantes se está trabajando con Trello
-
+![ScreenShot](/img/trello.png)
 Link: https://trello.com/invite/b/3FwjQZeS/51ba1f1450b22478601e12e3090aba5c/worldcare
+
