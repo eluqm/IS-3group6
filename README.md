@@ -128,6 +128,7 @@ En el siguiente link puedes encontrar los mockups realizados en Firgma: https://
 #### 6.1. Home
 ![ScreenShot](/img/home1.png)
 ![ScreenShot](/img/home2.png)
+![ScreenShot](/img/descubre.png)
 #### 6.2. Login
 ![ScreenShot](/img/login.png)
 #### 6.3 Registro
