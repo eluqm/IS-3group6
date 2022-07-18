@@ -56,7 +56,7 @@ WorldCare es una alternativa amigable en comparción a las calculadoras de huell
 
 #### Diagrama de Casos de Uso
 
-![ScreenShot](img/casosdeuso.png)
+![ScreenShot](img/casosdeusos.png)
 
 #### Caráteristicas del usuario
 
