@@ -104,20 +104,60 @@ WorldCare es una alternativa amigable en comparción a las calculadoras de huell
 
 ***
 
-_Mysql Workbench_
+### Instalación local en Windows
+
+  1. Descargar el software desde el [Repositorio](https://github.com/eluqm/IS-3group6)
+  2. Instalar el software en una carpeta local
+  3. Crear entorno virtual con la herramienta [virtualenv](https://virtualenv.pypa.io/en/latest/)
+  4. Activar el entorno virtual con la herramienta [activate](https://virtualenv.pypa.io/en/latest/userguide/getting-started.html)
+  5. Instalar las dependencias con la herramienta [pip](https://pip.pypa.io/en/latest/installing.html)  
+
+   ```
+    pip install Flask
+    pip install PyMySQL
+    pip install Flask-SQLAlchemy
+    pip install Flask_User
+  ```
+
+  6. Crear la base de datos: 
 
 ```
 create database huella_carbono;
 ```
 
-_Dependencias_
+  7. Iniciar el sistema en el entorno virtual:
+
+  ```
+  python3 main.py
+  ```
+
+### Instalación local en Linux
+
+  1. Descargar el software desde el [Repositorio](https://github.com/eluqm/IS-3group6)
+  2. Instalar el software en una carpeta local
+  3. Crear entorno virtual con la herramienta [virtualenv](https://virtualenv.pypa.io/en/latest/)
+  4. Activar el entorno virtual con la herramienta [activate](https://virtualenv.pypa.io/en/latest/userguide/getting-started.html)
+  5. Instalar las dependencias con la herramienta [pip](https://pip.pypa.io/en/latest/installing.html)  
+
+   ```
+    pip install Flask
+    pip install PyMySQL
+    pip install Flask-SQLAlchemy
+    pip install Flask_User
+  ```
+
+  6. Crear la base de datos: 
 
 ```
-pip install Flask
-pip install PyMySQL
-pip install Flask-SQLAlchemy
-pip install Flask_User
+create database huella_carbono;
 ```
+
+  7. Iniciar el sistema en el entorno virtual:
+
+  ```
+  python3 main.py
+  ```
+
 
 ## Diseño del Sistema
 
