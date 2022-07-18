@@ -1,7 +1,10 @@
 # WorldCare
 
 ***
-![ScreenShot](/img/wordcare.png)
+
+<p align="center">
+  <img src='./img/logo.png' width='500px' />
+</p>
 
 ## Introducción
 
@@ -101,7 +104,6 @@ WorldCare es una alternativa amigable en comparción a las calculadoras de huell
 
 ***
 
-
 _Mysql Workbench_
 
 ```
@@ -122,11 +124,10 @@ pip install Flask_User
 ***
 El protetipo del producto se realizó en con la herramienta Figma, la cual esta a disposicion en el siguiente enlace:
 
-https://app.moqups.com/MCtx2luPEu6uTzCcZyKaxHwRoK6f3Dw2/view/page/ae973f342
+<https://app.moqups.com/MCtx2luPEu6uTzCcZyKaxHwRoK6f3Dw2/view/page/ae973f342>
 
 ## Metodologia de desarrollo
 
 ***
 
-https://trello.com/b/3FwjQZeS/worldcare
-
+<https://trello.com/b/3FwjQZeS/worldcare>
