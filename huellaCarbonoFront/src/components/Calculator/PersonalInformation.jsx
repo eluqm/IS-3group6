@@ -2,10 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Layout } from '../Home/Layout'
 
-const WaterConsumption = () => {
+const PersonalInformation = () => {
   return (
     <Layout>
-        <h3> Consumo de Agua </h3>
+        <h3> Información Personal </h3>
         <Link to="/calculator">
           <button className='primary-btn'>Regresar</button>
         </Link>
@@ -13,4 +13,4 @@ const WaterConsumption = () => {
   )
 }
 
-export default WaterConsumption
+export default PersonalInformation
