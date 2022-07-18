@@ -57,12 +57,11 @@ Los encargados son Edward Luis Huayllasco y Jorge Alfredo Tito, convertiran los 
 WorldCare es una alternativa amigable en comparción a las calculadoras de huella de carbono, que si bien son de fácil acceso y distribución, WorldCare presenta las contribuciones de los usuarios como impactos positivos hacia el planeta, lo que pretende mostrar el valor que tiene cada aporte hecho por los usuarios y estos se mantengan motivados ha realizar más aportes en un futuro.
 
 #### 3.2. Funciones del producto
-
 ##### 3.2.1 Diagrama de Casos de Uso
-
+![ScreenShot](/img/casosdeuso.png)
 #### 3.3. Caráteristicas del usuario
 
-
+![ScreenShot](/img/usuario.png)
 ### 4. Requesitos Específicos
 
 #### 4.1. Requisitos Funcionales
@@ -135,6 +134,9 @@ En el siguiente link puedes encontrar los mockups realizados en Firgma: https://
 ![ScreenShot](/img/registrate.png)
 #### 6.4 Publicaciones
 ![ScreenShot](/img/publicaciones.png)
+#### 6.5 Sección Informativa
+![ScreenShot](/img/informate1.png)
+![ScreenShot](/img/informate2.png)
 
 
 ### 7. Trello
