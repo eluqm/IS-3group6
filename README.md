@@ -28,11 +28,11 @@ Este proyecto está dirigido al público en general, que estén interesados en e
 
 ### 2. Recursos Humanos
 
-La división de cada integrante para que aporte en un ámbito en específico es muy importante ya que de esta manera podemos distribuir el trabajo de una manera mucho más fácil y equitativa, por eso usando la metodología Scrum decidimos distribuir el grupo de la siguiente manera:
+La división de cada integrante en un ámbito en específico, para así poder distribuir el trabajo de una manera mucho más fácil y equitativa, utilizando la metodología Scrum, decidimos dar los siguientes cargos a cada integrante:
 
 #### 2.1. Scrum Master
 
-El Scrum Master de nuestro equipo es Kate Itati Olazabal Chavez ya que fue quien nos dio la idea de realizar este proyecto, por eso desempeña este cargo ya que podr guiarnos y al mismo tiempo resolver cualquier problema que surja.
+El Scrum Master de nuestro equipo es Kate Itati Olazabal Chavez ya que fue quien tuvo la idea sobre este proyecto, ella será la encargada de guiarnos y resolver las dudas que nos puedan surgir en el desarrollo del proyecto.
 
 #### 2.2. Product Owner
 
@@ -40,15 +40,15 @@ El Product Owner de nuestro equipo es Angel Concha Layme, él será la voz del c
 
 #### 2.3. Scrum Team
 
-El Scrum Team estara compuesto por Angela Aquise Santos, Edward Luis Huayllasco Carlos, Jorge Alfredo Tito, quienes serán los encargados de convertir World Care en un software entregable. En este caso decidimos dividir el trabajo de cada uno de nosotros en dos partes.
+El Scrum Team estará compuesto por Angela Aquise Santos, Edward Luis Huayllasco Carlos, Jorge Alfredo Tito, quienes serán los encargados de convertir World Care en un software entregable. En este caso decidimos dividir el trabajo de cada uno de nosotros en dos partes.
 
 - Diseñador:
 
-La encargada de generar el diseño del sistema es Angela Aquise Santos, quien va a generar el diseño arquitectonico y el diseño detallado del sistema con base en los requisitos.
+Quien se encargara de generar el diseño arquitectonico y el diseño detallado del sistema será Angela Aquise Santos, basandose en los requisitos.
 
 - Programadores:
 
-Los encargados son Edward Luis Huayllasco y Jorge Alfredo Tito, que tienen la capacidad de convertir los requisitos del sistema en código fuente ejecutable utilizando uno o más lenguajes de programación, así como herramientas de apoyo.
+Los encargados son Edward Luis Huayllasco y Jorge Alfredo Tito, convertiran los requisitos del sistema en código fuente ejecutable utilizando uno o más lenguajes de programación, así como herramientas de apoyo.
 
 ### 3. Descripción General
 
