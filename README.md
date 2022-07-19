@@ -221,7 +221,7 @@ Model View Controller - MVC, el Modelo-vista-controlador, es un patrón de arqui
 - Desarrollado con SQLAlchemy..
 - Select, Insert, Delete - Flask-SQLAlchemy).
 
-```
+```python
 class User(db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
@@ -238,7 +238,7 @@ class User(db.Model):
 
 - Sistema de plantillas Jinja2 (Capa vista).
 
-```
+```html
 {% extends "base.html" %}
 {% block header %}
     <h2> {% block title %}Publicaciones{% endblock %} </h2>
@@ -302,7 +302,7 @@ class User(db.Model):
 
 - Blueprint, render_template
 
-```
+```python
 blog = Blueprint('blog', __name__, url_prefix='/blog')
 
 @blog.route("/")
