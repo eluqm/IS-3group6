@@ -205,6 +205,11 @@ Para la gestión del proyecto y control del trabajo colaborativo de los integran
 ![ScreenShot](/img/trello.png)
 Link: https://trello.com/invite/b/3FwjQZeS/51ba1f1450b22478601e12e3090aba5c/worldcare
 
+## Base de datos relacional
+
+![ScreenShot](/img/db.jpg)
+
+
 ## Arquitectura
 
 ---
