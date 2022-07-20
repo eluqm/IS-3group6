@@ -30,19 +30,19 @@ El Scrum Master de nuestro equipo es Kate Itati Olazabal Chavez ya que fue quien
 
 ### Product Owner
 
-El Product Owner de nuestro equipo es Angel Concha Layme, él será la voz del cliente, en otras palabras, será el enlace entre un cliente y nuestro equipo de desarrollo. Él lleva la visión del producto y lo que se necesita desarrollar, además de gestionar los comentarios de los usuarios.
+El Product Owner de nuestro equipo es Angel Tomas Concha Layme, él será la voz del cliente, en otras palabras, será el enlace entre un cliente y nuestro equipo de desarrollo. Él lleva la visión del producto y lo que se necesita desarrollar, además de gestionar los comentarios de los usuarios.
 
 ### Scrum Team
 
-El Scrum Team estará compuesto por Angela Aquise Santos, Edward Luis Huayllasco Carlos, Jorge Alfredo Tito, quienes serán los encargados de convertir World Care en un software entregable. En este caso decidimos dividir el trabajo de cada uno de nosotros en dos partes.
+El Scrum Team estará compuesto por Angela Aquise Santos, Edward Luis Huayllasco Carlos, Jorge Alfredo Tito, Angel Tomas Concha Layme y Kate Itati Olazabal Chavez quienes serán los encargados de convertir World Care en un software entregable. En este caso decidimos dividir el trabajo de cada uno de nosotros en dos partes.
 
 #### Diseñadores
 
-Quien se encargara de generar el diseño arquitectonico y el diseño detallado del sistema será Angela Aquise Santos, basandose en los requisitos.
+Quien se encargara de generar el diseño arquitectonico y el diseño detallado del sistema será Angela Aquise Santos y Kate Itati Olazabal Chavez, basandose en los requisitos.
 
 #### Programadores
 
-Los encargados son Edward Luis Huayllasco y Jorge Alfredo Tito, convertiran los requisitos del sistema en código fuente ejecutable utilizando uno o más lenguajes de programación, así como herramientas de apoyo.
+Los encargados son Angel Tomas Concha Layme, Edward Luis Huayllasco y Jorge Alfredo Tito, convertiran los requisitos del sistema en código fuente ejecutable utilizando uno o más lenguajes de programación, así como herramientas de apoyo.
 
 ## Descripción General
 
