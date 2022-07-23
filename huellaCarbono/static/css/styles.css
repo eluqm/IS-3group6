@@ -1,148 +1,200 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgb(0,0,0,0.1);
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(69,162,158,0.2);
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: rgba(64, 209, 139, 0.734);
 }
 
 body{
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    font-size: 17px;
+    background-color: #e6e6e6;
 }
 
-.header{
-    background-color: #09a3a3;
+.page .sidebar{
+    height: 100vh;
+    width: 250px;
+    background: linear-gradient(90deg,#7ef31f, #1dc257);
+    top: 0;
+    /*left: 0;INITIAL_CONFIG*/
+    left: -250px;
+    position: fixed;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all 1s ease;
 }
 
-.nav{
+.page .content{
+    /*margin-left: 250px;INITIAL_CONFIG*/
+    margin-left: 0px;
+    transition: all 1s ease;
+}
+
+body.active .page .sidebar{
+    /*left: -250px;INITIAL_CONFIG*/
+    left: 0px;
+}
+body.active .page .content{
+    /*margin-left: 0;INITIAL_CONFIG*/
+    margin-left: 250px;
+    /*width: 100%;INITIAL_CONFIG*/
+    width: auto;
+}
+
+.sidebar-header{
+    padding: 10px 25px 10px 15px;
+}
+.sidebar-logo-container{
+    background-color: rgb(0,0,0,0.1);
+    border-radius: 8px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 85%;
-    margin: 0 auto;
-    padding: 3px 0;;
+    padding-left: 3px;
+}
+
+.logo-container{
+    max-width: 40px;
+    background-color: rgb(255,255,255,0.1);
+    border-radius: 8px;
+    margin: 8px;
+    padding: 6px 8px;
+}
+
+.logo-sidebar{
+    width: 100%;
+    height: auto;
+}
+
+.brand-name-container{
+    padding: 0px;
+    margin: 10px 10px 0px 2px;
+}
+
+.brand-name{
+    color: white;
+    margin: 0px;
+    line-height: 1.1rem;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }
 
-.nav a{
-    text-decoration: none;
-    color: #fff;
-}
-.nav nav{
-    display: flex;
-    align-items: center;
-}
-
-.nav nav a{
-    margin: 0 10px;
-}
-
-.nav nav span{
-    margin: 0 10px 0 0;
-    color: #ccc;
-    text-transform: capitalize;
-    font-weight: 600;
-}
-
-
-/*CONTENT*/
-.content{
-    max-width: 85%;
-    margin: 10px auto;
-}
-
-.content header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ccc;
-    padding: 10px 0;
-}
-
-/*MENSAJE DE FLASH*/
-.flash{
-    background-color: #d64734;
-    color: #fff;
-    padding: 7px;
-}
-
-/*Index publicaciones*/
-article{
-    padding: 10px 0;
-}
-
-article header{
-    margin: 10px 0;
-    display: flex;
-    align-self: center;
-    justify-content: space-between;
-}
-article header .nameYMegusta{
-   
-    display: flex;
-    align-items: flex-end;
-}
-
-.contenido{
-    /*arriba derecha abajo izq*/
-    margin:  0 20px  0 0;
-}
-
-article header h1{
-    font-size: 26px;
-}
-article header .about {
-    font-style: italic;
-    color: #707070;
-}
-
-.mensajeCantaidadLikes{
-    font-style: italic;
-    color: #707070
-}
-
-/*FORMULARIOS*/
-form{
-    margin: 5px 0;
-    display: flex;
-    flex-direction: column;
-
-}
- form label, input, textarea{
+.brand-subname{
     font-weight: 300;
-    margin: 5px 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px;
-    padding: 3px;
- }
+    font-size: 14px;
+}
 
- form input[type=submit]{
-    align-self: start;
-    min-width: 200px;
- }
+.navigation-list{
+    list-style-type: none;
+    padding: 0px 18px;
+    margin-top: 30px;
+}
 
+.navigation-list-item{
+    padding: 10px 18px 10px 18px;
+    border-radius: 8px;
+    margin: 15px 0px;
+}
 
- /*LOGIN*/
- .login{
-    max-width: 40%;
-    margin: 0 auto;
- }
-
- .login input[type=submit]{
-    margin: 10px 0;
-    min-width: 100%;
-    background-color: #09a3a3;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
- }
-
- .login input[type=submit]:hover{
-    background-color: #07cece;
+.navigation-list-item:hover{
+    background: rgb(0,0,0,0.05);
+    box-shadow: 0 0 0.4em rgb(255,255,255,0.1);
     cursor: pointer;
- }
+}
 
+.navigation-list-item.active{
+    background: rgb(0,0,0,0.1);
+    box-shadow: 0 0 0.4em rgb(255,255,255,0.1);
+}
 
- .carousel-item {
+.navigation-link{
+    color: rgb(31,40,51,0.8);
+    letter-spacing: 0.5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.navigation-list-item:hover .navigation-link {
+    color: rgb(255,255,255,0.7);
+}
+
+.navigation-list-item.active .navigation-link {
+    color: rgb(255,255,255,0.7);
+    font-weight: 500;
+}
+
+.navigation-link i {
+    font-size: 20px;
+}
+
+.teams-list {
+    padding-left: 30px;
+    list-style-type: none;
+}
+
+.teams-list-item {
+    letter-spacing: 0.5px;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(31,40,51,0.8);
+    margin-bottom: 30px;
+}
+
+.teams-list-item i{
+    font-size: 10px;
+}
+
+.teams-title-container{
+    padding-left: 30px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.teams-title{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 17px;
+    color: rgb(31,40,51,0.8);
+    letter-spacing: 0.5px;
+}
+
+.navigation-bar{
+    background-color: rgb(245, 5, 5);
+    height: 50px;
+    padding: 38px 0;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 2px -2px #c5c6c7;
+}
+
+.sidebarToggle{
+    font-size: 16px;
+    background-color: #c5c6c7;
+    color: rgb(0,0,0,0.8);
+    /*margin-left: -19px;INITIAL_CONFIG*/
+    margin-left: 2px;
+    z-index: 999;
+    border-radius: 50px;
+    outline: none !important;
+    box-shadow: none !important;
+    transition: all 1s ease;
+}
+
+.sidebarToggle:hover{
+    color: white;
+}
+
+.sidebarToggle.active{
+    margin-left: 10px;;
+}
+
+.carousel-item {
     height: 65vh;
     min-height: 350px;
     background: no-repeat center center scroll;

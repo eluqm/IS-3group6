@@ -20,3 +20,6 @@ class User(db.Model):
 
     def __repr__(self) -> str:
         return f'User: {self.username}'
+
+    def setRole(self,role) -> None:
+        self.rol = role
