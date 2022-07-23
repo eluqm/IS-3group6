@@ -294,13 +294,14 @@
                     <div class=" collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav ms-auto ">
                             <li class="nav-item">
+                                <a class="nav-link mx-2" href="/">Informate</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-2" href="/">Aportes</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link mx-2 active" aria-current="page" href="{{url_for("blog.index")}}">Publicaciones</a>
                             </li>
-                            {% if g.user.username == 'admin' %}
-                                <li class="nav-item">
-                                    <a class="nav-link mx-2" aria-current="page" href="{{url_for("blog.createClasePublicacion")}}"> Crear Clase Publicacion</a>
-                                </li>
-                            {% endif %}
                             
                             <!-- EXAMPLE NAV-ITEM
                             <li class="nav-item">
