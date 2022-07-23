@@ -90,7 +90,7 @@
                                     <i class="fas fa-tachometer-alt"></i>
                                 </div>
                                 <div class="col-10">
-                                    Dashboard
+                                    Información
                                 </div>
                             </div>            
                         </a>
@@ -102,7 +102,7 @@
                                     <i class="fas fa-tachometer-alt"></i>
                                 </div>
                                 <div class="col-10">
-                                    Teams
+                                    Logros
                                 </div>
                             </div>       
                         </a>
@@ -114,7 +114,7 @@
                                     <i class="fas fa-tachometer-alt"></i>
                                 </div>
                                 <div class="col-10">
-                                    Chat
+                                    Publicaciones
                                 </div>
                             </div>                           
                         </a>
@@ -126,7 +126,7 @@
                                     <i class="fas fa-tachometer-alt"></i>
                                 </div>
                                 <div class="col-10">
-                                    Analytic
+                                    Aportes
                                 </div>
                             </div>
                         </a>
@@ -138,13 +138,61 @@
                                     <i class="fas fa-tachometer-alt"></i>
                                 </div>
                                 <div class="col-10">
-                                    Calendar
+                                    anymore
                                 </div>
                             </div>
                         </a>
                     </li>
+
                     
                 </ul>
+
+                {% if g.user.username == 'admin' %}
+                <hr style="margin-top: 30px; color: white;">
+                <div class="teams-title-container">
+                    <p class="teams-title">TAREAS</p>
+                </div>
+                <ul class="navigation-list">
+                    <li class="navigation-list-item">
+                        <a class="navigation-link" href="{{url_for("blog.createClasePublicacion")}}">
+                            <div class="row">
+                                <div class="col-2">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                </div>
+                                <div class="col-10">
+                                    Crear Clase de Publicaciones
+                                </div>
+                            </div>            
+                        </a>
+                    </li>
+
+                    <li class="navigation-list-item">
+                        <a class="navigation-link" href="/">
+                            <div class="row">
+                                <div class="col-2">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                </div>
+                                <div class="col-10">
+                                    Crear Clase
+                                </div>
+                            </div>            
+                        </a>
+                    </li>
+
+                    <li class="navigation-list-item">
+                        <a class="navigation-link" href="/">
+                            <div class="row">
+                                <div class="col-2">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                </div>
+                                <div class="col-10">
+                                    Crear Roles
+                                </div>
+                            </div>            
+                        </a>
+                    </li>
+                </ul>
+                {% endif %}
 
                 <hr style="margin-top: 30px; color: white;">
                 
@@ -186,6 +234,24 @@
                     </li>
 
                 </ul>
+
+                <hr style="margin-top: 30px; color: white;">
+
+                <ul class="navigation-list">
+                    <li class="navigation-list-item">
+                        <a class="navigation-link" href="{{url_for("auth.logout")}}">
+                            <div class="row">
+                                <div class="col-2">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                </div>
+                                <div class="col-10">
+                                    Cerrar Sesión
+                                </div>
+                            </div>            
+                        </a>
+                    </li>
+                </ul>
+
             </div>
         </div>
         {% endif %}
