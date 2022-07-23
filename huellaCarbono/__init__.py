@@ -28,19 +28,30 @@ app.register_blueprint(blog)
 
 
 
-from huellaCarbono.models.user import User
-from werkzeug.security import check_password_hash, generate_password_hash
-
-admin = User('maria', generate_password_hash('maria'))
-admin.setRole(1)
-findUser = User.query.filter_by(username='maria').first()
-if findUser == None:
-    db.session.add(admin)
-    db.session.commit()
-
 
 #from huellaCarbono.models.user import User
 #user_manager = UserManager(app, db, User)
 
 db.create_all()
 
+from huellaCarbono.models.role import Role
+roleadmin = Role('admin')
+roleUser= Role('user')
+findRoleAdmin = Role.query.filter_by(name='admin').first()
+findRoleUser = Role.query.filter_by(name='user').first()
+if findRoleAdmin == None:
+    db.session.add(roleadmin)
+    db.session.commit()
+if findRoleUser == None:
+    db.session.add(roleUser)
+    db.session.commit()
+
+from huellaCarbono.models.user import User
+from werkzeug.security import check_password_hash, generate_password_hash
+
+admin = User('admin', generate_password_hash('admin'))
+admin.setRole(1)
+findUser = User.query.filter_by(username='admin').first()
+if findUser == None:
+    db.session.add(admin)
+    db.session.commit()
