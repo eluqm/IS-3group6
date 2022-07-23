@@ -12,6 +12,7 @@ from flask import(
 from werkzeug.exceptions import abort
 from huellaCarbono.models.interaccion import Interaccion
 from huellaCarbono.models.post import Post
+from huellaCarbono.models.role import Role
 from huellaCarbono.models.user import User
 from huellaCarbono.models.clasePublicacion import ClasePublicacion
 
@@ -45,23 +46,28 @@ def get_user(id):
     return user
 
 
-def getTipoPublicacion(id):
+def getPublicacion_by_id(id):
     return ClasePublicacion.query.get(id)
 
+
+def getRole_by_id(id):
+    return Role.query.get(id)
+
+
 # LISTAR TODAS LAS PUBLICACIONES
-
-
 @blog.route("/")
 def index():
     updatePostLikes()
     posts = Post.query.all()
     posts = list(reversed(posts))
     interacciones = Interaccion.query.all()
+    roles = Role.query.all()
     db.session.commit()
     db.session.commit()
-    return render_template('blog/index.html', interacciones=interacciones,
+    return render_template('blog/index.html', roles=roles, interacciones=interacciones,
                            posts=posts, get_user=get_user, functionInter=InteraccionUserInPosts,
-                           getTipoPublicacion=getTipoPublicacion)
+                           getTipoPublicacion=getPublicacion_by_id,
+                           getRole_by_id=getRole_by_id)
 
 
 # REGISTRAR UN POST

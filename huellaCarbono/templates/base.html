@@ -62,18 +62,18 @@
 
     
     <div class="page">
-
+        {% if g.user %}
         <div class="sidebar">
             <!--SIDEBAR HEADER-->
             <div class="sidebar-header">
                 <div class="sidebar-logo-container">
                     <div class="logo-container">
-                        <img class="logo-sidebar" src="assets/img/logo.jpg" alt="logo">
+                        <img class="logo-sidebar" src="{{url_for("static",filename='img/user.png')}}" alt="logo">
                     </div>
                     <div class="brand-name-container">
                         <p class="brand-name">
-                            name01 </br>
-                            <span class="brand-subname">WorkSpace</span>
+                            {{g.user.username}} </br>
+                            <span class="brand-subname">{{getRole_by_id(g.user.rol).name}}</span>
                         </p>
                     </div>
                    
@@ -188,6 +188,8 @@
                 </ul>
             </div>
         </div>
+        {% endif %}
+
         <div class="content">
             <!--<div class="navigation-bar">-->
             <nav class="navbar navbar-expand-lg navbar-light p-2  " style="background: linear-gradient(180deg,#7ef31f, #1dc257);" >

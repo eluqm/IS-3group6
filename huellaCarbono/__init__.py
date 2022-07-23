@@ -16,6 +16,9 @@ db = SQLAlchemy(app)
 from huellaCarbono.views.blog import InteraccionUserInPosts
 app.jinja_env.globals.update(InteraccionUserInPosts=InteraccionUserInPosts)
 
+from huellaCarbono.views.blog import getRole_by_id
+app.jinja_env.globals.update(getRole_by_id=getRole_by_id)
+
 #IMPORTAR VISTAS
 from huellaCarbono.views.auth import auth
 app.register_blueprint(auth)
