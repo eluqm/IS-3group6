@@ -15,6 +15,7 @@ class Post(db.Model):
     title = db.Column(db.String(50))
     body = db.Column(db.Text)
     interaccion_number = db.Column(db.Integer)
+    pathImage = db.Column(db.String(100))
     created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     #users = relationship(User, cascade="all,delete", backref="children")
     users = relationship(User, backref=db.backref(
@@ -23,13 +24,14 @@ class Post(db.Model):
     clasePostPub = relationship(ClasePublicacion, backref=db.backref(
         "clasePulicacion", cascade="all,delete"))
 
-    def __init__(self, author, title, body, tipoPublicacion) -> None:
+    def __init__(self, author, title, body, tipoPublicacion, pathImage) -> None:
         self.author = author
         self.title = title
         self.interaccion_number = Post.query.filter_by(author=1).count()
   # Interaccion.query.count()
         self.body = body
         self.clase_post = tipoPublicacion
+        self.pathImage = pathImage
 
     def __repr__(self) -> str:
         return f'Post: {self.title}'

@@ -8,6 +8,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50))
     password = db.Column(db.Text)
+    pathImage = db.Column(db.String(100))
     rol = db.Column(db.Integer, db.ForeignKey(
         'roles.id'), nullable=False, default=2)
     #roles = db.relationship('Role', secondary='user_roles')
@@ -17,9 +18,10 @@ class User(db.Model):
     def __init__(self, username, password) -> None:
         self.username = username
         self.password = password
+        self.pathImage = ""
 
     def __repr__(self) -> str:
         return f'User: {self.username}'
 
-    def setRole(self,role) -> None:
+    def setRole(self, role) -> None:
         self.rol = role

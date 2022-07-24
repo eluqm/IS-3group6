@@ -1,5 +1,7 @@
 # configuracion de produccion modo desarrollo
 from flask_sqlalchemy import SQLAlchemy
+UPLOAD_FOLDER = 'huellaCarbono/static/uploads/'
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
 
 class Config:
@@ -19,6 +21,9 @@ class Config:
     USER_EMAIL_SENDER_NAME = USER_APP_NAME
     USER_EMAIL_SENDER_EMAIL = "noreply@example.com"
     USER_UNAUTHORIZED_ENDPOINT = "https://www.youtube.com/watch?v=FX0lMm_Qj10"
+
+    UPLOAD_FOLDER = UPLOAD_FOLDER
+    MAX_CONTENT_LENGTH = 16 * 1024 * 1024
 
 
 class ProductionConfig(Config):

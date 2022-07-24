@@ -1,15 +1,21 @@
 #from crypt import methods
+from ast import Pass
 from operator import and_, or_
 from queue import Empty
 from sys import flags
+from unittest.mock import patch
 from flask import(
     render_template, Blueprint, flash, g, redirect, request, url_for
 )
 #from flask_security import Security, roles_required, roles_accepted
 #from flask_user import roles_required, UserManager
 
+import os
+import urllib.request
 
 from werkzeug.exceptions import abort
+from werkzeug.utils import secure_filename
+from config import ALLOWED_EXTENSIONS, UPLOAD_FOLDER
 from huellaCarbono.models.interaccion import Interaccion
 from huellaCarbono.models.post import Post
 from huellaCarbono.models.role import Role
@@ -20,6 +26,7 @@ from huellaCarbono.models.clasePublicacion import ClasePublicacion
 from huellaCarbono.views.auth import login_required
 from huellaCarbono.views.auth import admin_required
 from huellaCarbono import db
+from huellaCarbono import app
 
 blog = Blueprint('blog', __name__, url_prefix='/blog')
 
@@ -70,7 +77,12 @@ def index():
                            getRole_by_id=getRole_by_id)
 
 
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 # REGISTRAR UN POST
+
+
 @blog.route('/blog/create', methods=('GET', 'POST'))
 @login_required
 # @roles_required('admin')
@@ -83,9 +95,31 @@ def createPost():
         title = request.form.get('title')
         body = request.form.get('body')
         tipoP = request.form.get('tipo')
-        print("RECOLECCIONNNNNN")
-        print(tipoP)
-        post = Post(g.user.id, title, body, tipoP)
+        # to SAVE IMAGES
+        filename = ""
+        if 'file' not in request.files:
+            flash("No file part")
+            return redirect(request.url)
+        file = request.files['file']
+        if file.filename == '':
+            flash("No se ha seleccionado una imagen")
+            return redirect(request.url)
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            #print("filename: ", filename)
+            #print(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            # print(os.path.abspath(UPLOAD_FOLDER))
+            #print(os.path.join('/home/russell', filename))
+            #file.save(os.path.join(os.path.abspath(UPLOAD_FOLDER), filename))
+            #file.save(os.path.join('/home/russell', filename))
+            #file.save(os.path.join(os.path.abspath(UPLOAD_FOLDER), filename))
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            flash("Imagen Guardado exitosamente")
+        else:
+            flash("Extensione spermitidas son: png, jpg, jpeg, gif")
+            return redirect(request.url)
+        # print(tipoP)
+        post = Post(g.user.id, title, body, tipoP, filename)
 
         error = None
         if not title:
