@@ -1,7 +1,6 @@
 # configuracion de produccion modo desarrollo
 from flask_sqlalchemy import SQLAlchemy
 UPLOAD_FOLDER = 'huellaCarbono/static/uploads/'
-ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
 
 class Config:

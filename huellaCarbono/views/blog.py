@@ -1,25 +1,15 @@
 #from crypt import methods
-from ast import Pass
-from operator import and_, or_
-from queue import Empty
-from sys import flags
-from unittest.mock import patch
+from operator import and_
 from flask import(
     render_template, Blueprint, flash, g, redirect, request, url_for
 )
-#from flask_security import Security, roles_required, roles_accepted
-#from flask_user import roles_required, UserManager
 
 import os
-import urllib.request
-
-from werkzeug.exceptions import abort
 from werkzeug.utils import secure_filename
-from config import ALLOWED_EXTENSIONS, UPLOAD_FOLDER
+from config import UPLOAD_FOLDER
 from huellaCarbono.models.interaccion import Interaccion
 from huellaCarbono.models.post import Post
 from huellaCarbono.models.role import Role
-from huellaCarbono.models.user import User
 from huellaCarbono.models.clasePublicacion import ClasePublicacion
 
 
@@ -31,34 +21,14 @@ from huellaCarbono import app
 blog = Blueprint('blog', __name__, url_prefix='/blog')
 
 
-# DADO UN USUARIO , VER QUE POST LE GUSTO
-def InteraccionUserInPosts(posts, interacciones, id):
-    listReacciones = []
-    for post in posts:
-        flag = 0
-        for inter in interacciones:
-            if post.id == inter.post and inter.user == id:
-                flag = 1
-                listReacciones.append(True)
-                break
-        if not flag:
-            listReacciones.append(False)
-    return listReacciones
-
-# OBTENER UN USUARIO
-
-
-def get_user(id):
-    user = User.query.get_or_404(id)
-    return user
-
-
-def getPublicacion_by_id(id):
-    return ClasePublicacion.query.get(id)
-
-
-def getRole_by_id(id):
-    return Role.query.get(id)
+#FROM UTILS
+from huellaCarbono.utils.utils_blog import InteraccionUserInPosts
+from huellaCarbono.utils.utils_blog import get_user
+from huellaCarbono.utils.utils_blog import getPublicacion_by_id
+from huellaCarbono.utils.utils_blog import getRole_by_id
+from huellaCarbono.utils.utils_blog import allowed_file
+from huellaCarbono.utils.utils_blog import updatePostLikes
+from huellaCarbono.utils.utils_blog import get_post
 
 
 # LISTAR TODAS LAS PUBLICACIONES
@@ -77,12 +47,7 @@ def index():
                            getRole_by_id=getRole_by_id)
 
 
-def allowed_file(filename):
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
 # REGISTRAR UN POST
-
-
 @blog.route('/blog/create', methods=('GET', 'POST'))
 @login_required
 # @roles_required('admin')
@@ -155,17 +120,6 @@ def displayImage(filename):
     return redirect(url_for('static', filename='uploads/' + filename), code=301)
 
 
-# OBTENER POST
-
-
-def get_post(id, check_author=True):
-    post = Post.query.get(id)
-    if post is None:
-        abort(404, f'Id{id} de la publicaion no existe')
-    if check_author and post.author != g.user.id:
-        abort(404)
-    return post
-
 
 # UPDATE POST
 @blog.route('/blog/update/<int:id>', methods=('GET', 'POST'))
@@ -184,14 +138,6 @@ def updatePost(id):
             return redirect(url_for('blog.index'))
     return render_template('blog/update.html', post=post)
 
-
-def updatePostLikes():
-    posts = Post.query.all()
-    for post in posts:
-        post.interaccion_number = Interaccion.query.filter_by(
-            post=post.id).count()
-        db.session.add(post)
-        db.session.commit()
 
 
 # ELIMINAR POST
