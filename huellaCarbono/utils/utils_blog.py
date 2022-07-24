@@ -4,7 +4,7 @@ from huellaCarbono.models.interaccion import Interaccion
 from huellaCarbono.models.clasePublicacion import ClasePublicacion
 from huellaCarbono.models.role import Role
 
-from flask import g
+from flask import g, render_template
 from werkzeug.exceptions import abort
 
 from huellaCarbono import db
@@ -32,12 +32,17 @@ def getRole_by_id(id):
 def get_post(id, check_author=True):
     post = Post.query.get(id)
     if post is None:
-        abort(404, f'Id{id} de la publicaion no existe')
-    if check_author and post.author != g.user.id:
+        #abort(404, f'Id{id} de la publicaion no existe')
         abort(404)
+    if check_author and post.author != g.user.id:
+        #abort(403, f'Id{id} forbidden')
+        abort(401)
+        # return render_template('errorPages/401.html'), 401
     return post
 
 # ACTUALIZAR EL ATRBUTO interaccion_number CADA VEZ QUE ALGUIEN REACCIONA
+
+
 def updatePostLikes():
     posts = Post.query.all()
     for post in posts:

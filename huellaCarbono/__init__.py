@@ -29,6 +29,9 @@ app.register_blueprint(main)
 from huellaCarbono.views.blog import blog
 app.register_blueprint(blog)
 
+from huellaCarbono.views.profile import profile
+app.register_blueprint(profile)
+
 
 
 

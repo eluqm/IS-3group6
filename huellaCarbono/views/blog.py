@@ -1,4 +1,11 @@
 #from crypt import methods
+from huellaCarbono.utils.utils_blog import get_post
+from huellaCarbono.utils.utils_blog import updatePostLikes
+from huellaCarbono.utils.utils_blog import allowed_file
+from huellaCarbono.utils.utils_blog import getRole_by_id
+from huellaCarbono.utils.utils_blog import getPublicacion_by_id
+from huellaCarbono.utils.utils_blog import get_user
+from huellaCarbono.utils.utils_blog import InteraccionUserInPosts
 from operator import and_
 from flask import(
     render_template, Blueprint, flash, g, redirect, request, url_for
@@ -21,14 +28,7 @@ from huellaCarbono import app
 blog = Blueprint('blog', __name__, url_prefix='/blog')
 
 
-#FROM UTILS
-from huellaCarbono.utils.utils_blog import InteraccionUserInPosts
-from huellaCarbono.utils.utils_blog import get_user
-from huellaCarbono.utils.utils_blog import getPublicacion_by_id
-from huellaCarbono.utils.utils_blog import getRole_by_id
-from huellaCarbono.utils.utils_blog import allowed_file
-from huellaCarbono.utils.utils_blog import updatePostLikes
-from huellaCarbono.utils.utils_blog import get_post
+# FROM UTILS
 
 
 # LISTAR TODAS LAS PUBLICACIONES
@@ -120,7 +120,6 @@ def displayImage(filename):
     return redirect(url_for('static', filename='uploads/' + filename), code=301)
 
 
-
 # UPDATE POST
 @blog.route('/blog/update/<int:id>', methods=('GET', 'POST'))
 @login_required
@@ -137,7 +136,6 @@ def updatePost(id):
             db.session.commit()
             return redirect(url_for('blog.index'))
     return render_template('blog/update.html', post=post)
-
 
 
 # ELIMINAR POST
@@ -181,3 +179,15 @@ def reaccionarPost(id):
         #print("ID: ", row.id)
         # print(findInteraccion[0].id) #THIS IS CORRECT
     return redirect(url_for('blog.index'))
+
+
+@blog.errorhandler(404)
+def page_not_found(e):
+    # note that we set the 404 status explicitly
+    return render_template('errorPages/404.html'), 404
+
+
+@blog.errorhandler(401)
+def unauthorized(e):
+    # note that we set the 404 status explicitly
+    return render_template('errorPages/401.html'), 401
