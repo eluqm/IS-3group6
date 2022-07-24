@@ -1,11 +1,3 @@
-#from crypt import methods
-from huellaCarbono.utils.utils_blog import get_post
-from huellaCarbono.utils.utils_blog import updatePostLikes
-from huellaCarbono.utils.utils_blog import allowed_file
-from huellaCarbono.utils.utils_blog import getRole_by_id
-from huellaCarbono.utils.utils_blog import getPublicacion_by_id
-from huellaCarbono.utils.utils_blog import get_user
-from huellaCarbono.utils.utils_blog import InteraccionUserInPosts
 from operator import and_
 from flask import(
     render_template, Blueprint, flash, g, redirect, request, url_for
@@ -29,6 +21,13 @@ blog = Blueprint('blog', __name__, url_prefix='/blog')
 
 
 # FROM UTILS
+from huellaCarbono.utils.utils_blog import get_post
+from huellaCarbono.utils.utils_blog import updatePostLikes
+from huellaCarbono.utils.utils_blog import allowed_file
+from huellaCarbono.utils.utils_blog import getRole_by_id
+from huellaCarbono.utils.utils_blog import getPublicacion_by_id
+from huellaCarbono.utils.utils_blog import get_user
+from huellaCarbono.utils.utils_blog import InteraccionUserInPosts
 
 
 # LISTAR TODAS LAS PUBLICACIONES
