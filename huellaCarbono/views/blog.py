@@ -150,7 +150,14 @@ def createClasePublicacion():
     return render_template('blog/createClasePublicacion.html', clasesPub=clasesPub)
 
 
+@blog.route('/display/<filename>')
+def displayImage(filename):
+    return redirect(url_for('static', filename='uploads/' + filename), code=301)
+
+
 # OBTENER POST
+
+
 def get_post(id, check_author=True):
     post = Post.query.get(id)
     if post is None:
