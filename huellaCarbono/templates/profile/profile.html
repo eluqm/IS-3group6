@@ -5,4 +5,9 @@
 
 {% block content %}
 <p>Informacion Personal</p>
+<form action="" method="post">
+    <label for="username">Usuario:</label>
+    <input type="text" name="username" id="username" value={{user.username}} requerid>
+    <input type="submit" value="Actualizar Usuario">
+</form>
 {% endblock %}

@@ -12,7 +12,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>{% block title%}{% endblock %}</title>
 </head>
+
+
+{% if  render == 'view/profile' %}
+<body class="{{ classes.page_div }}">
+{% else %}
 <body>
+{% endif %}
+
     <!--
       <header class="header">
         <div class="nav">
@@ -89,7 +96,7 @@
                                 <div class="col-2">
                                     <i class="fa-solid fa-address-card"></i>
                                 </div>
-                                <div class="col-10">
+                                <div class="col-10 sidebarInformation">
                                     Información
                                 </div>
                             </div>            
@@ -267,6 +274,7 @@
                 
                 <div class="container-fluid">
                     <a class="navbar-brand" href="{{url_for("index.index")}}">WorldCare</a>
+                    
                     <!--
                         <a href="{{url_for("index.index")}}">
                             <h1>Huella Carbono</h1>
@@ -294,7 +302,7 @@
                     <div class=" collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav ms-auto ">
                             <li class="nav-item">
-                                <a class="nav-link mx-2" href="/">Informate</a>
+                                <a class="nav-link mx-2 " href="/">Informate</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link mx-2" href="/">Aportes</a>
