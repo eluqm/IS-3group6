@@ -15,10 +15,6 @@ profile = Blueprint('profile', __name__, url_prefix='/profile')
 @login_required
 def perfil(id):
     user = getUser(id)
-    context = {
-        "classes": {"page_div": "active"}
-    }
-    mono = "Mono"
     if request.method == 'POST':
         user.username = request.form.get('username')
         if not user.username:
@@ -27,8 +23,7 @@ def perfil(id):
             db.session.add(user)
             db.session.commit()
             return redirect(url_for('profile.perfil'))
-    return render_template('profile/profile.html', user=user, **context, render="view/profile")
-    render_template()
+    return render_template('profile/profile.html', user=user, render="view/profile")
 
 
 @profile.errorhandler(404)

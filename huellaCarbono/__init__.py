@@ -33,6 +33,9 @@ from huellaCarbono.views.profile import profile
 app.register_blueprint(profile)
 
 
+from huellaCarbono.views.aportes import aportes
+app.register_blueprint(aportes)
+
 
 
 #from huellaCarbono.models.user import User

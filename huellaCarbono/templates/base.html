@@ -14,8 +14,8 @@
 </head>
 
 
-{% if  render == 'view/profile' %}
-<body class="{{ classes.page_div }}">
+{% if  render == 'view/profile' or render == "view/aportes"%}
+<body class="active">
 {% else %}
 <body>
 {% endif %}
@@ -121,19 +121,19 @@
                                     <i class="fa-brands fa-usps"></i>
                                 </div>
                                 <div class="col-10">
-                                    Publicaciones
+                                    Mis Publicaciones
                                 </div>
                             </div>                           
                         </a>
                     </li>
                     <li class="navigation-list-item">
-                        <a class="navigation-link" href="/">
+                        <a class="navigation-link" href="{{url_for("aportes.menu",id=g.user.id)}}">
                             <div class="row">
                                 <div class="col-2">
                                     <i class="fa-solid fa-hands-holding-circle"></i>
                                 </div>
                                 <div class="col-10">
-                                    Aportes
+                                    Mis Aportes
                                 </div>
                             </div>
                         </a>
@@ -157,7 +157,7 @@
                 {% if g.user.username == 'admin' %}
                 <hr style="margin-top: 30px; color: white;">
                 <div class="teams-title-container">
-                    <p class="teams-title">TAREAS</p>
+                    <p class="teams-title">TAREAS ADMIN</p>
                 </div>
                 <ul class="navigation-list">
                     <li class="navigation-list-item">
@@ -198,6 +198,20 @@
                             </div>            
                         </a>
                     </li>
+
+                    <li class="navigation-list-item">
+                        <a class="navigation-link" href="/">
+                            <div class="row">
+                                <div class="col-2">
+                                    <i class="fa-solid fa-marker"></i>
+                                </div>
+                                <div class="col-10">
+                                    Crear Categoria
+                                </div>
+                            </div>            
+                        </a>
+                    </li>
+
                 </ul>
                 {% endif %}
 
