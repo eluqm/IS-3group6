@@ -203,3 +203,15 @@ body.active .page .content{
     -o-background-size: cover;
     background-size: cover;
   }
+
+
+/*APORTES*/
+.tabs{
+    position: absolute;
+    top: 20%;
+    left: 100px;
+    transition: all 1s ease;
+}
+body.active .tabs{
+    left: 350px;
+}
