@@ -207,42 +207,82 @@ body.active .page .content{
 
 /*APORTES*/
 .tabs{
-    /* position: absolute; */
-    top: 20%;
-    left: 100px;
     transition: all 1s ease;
     background: #E3FFC7;
     width: 80%;
-    margin: auto;
+    margin: 30px auto;
     display: flex;
-    height: 500px;
+    height: 400px;
 }
 .tabs .tab-header {
-    border: 1px solid red;
     width: 20%;
+    margin: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
+    
 }
 .tabs .tab-header > div {
     cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 1px solid #1D6855;
+    background: white;
+    text-align: center;
+    padding: 5px;
 }
 .tabs .tab-header > div.active {
-    color: red;
+    background: #76C3AF;
+    color: white;
 }
 .tabs .tab-body{
     position: relative;
-    height: calc(100% - 60px);
-    padding: 10px 5px;
-    width: 80%;
+    width: 600px;
+    margin: 0 auto;
+
 }
 
 .tabs .tab-body > div {
-    background: yellow;
+    padding-top: 20px;
     position: absolute;
     top: 0;
     opacity: 0;
-    margin-top:5px;
+    margin:5px auto;
     transform: scale(0.9);
     transition: opacity 500ms ease-in-out 0ms, transform 500ms ease-in-out 0ms;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+}
+
+.tabs .tab-body > div span{
+    color: #1D6855;
+}
+
+
+.tabs .tab-body > div img{
+    margin-top: 20px;
+    position: absolute;
+    right: 0;
+}
+
+.tabs .tab-body > div label{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.tab-image-container{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+.tab-image-container img{
+    width: 50px;
 }
 
 .tabs .tab-body > div.active{
