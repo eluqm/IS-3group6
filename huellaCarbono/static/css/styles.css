@@ -207,11 +207,80 @@ body.active .page .content{
 
 /*APORTES*/
 .tabs{
-    position: absolute;
+    /* position: absolute; */
     top: 20%;
     left: 100px;
     transition: all 1s ease;
+    background: #E3FFC7;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    height: 500px;
 }
-body.active .tabs{
-    left: 350px;
+.tabs .tab-header {
+    border: 1px solid red;
+    width: 20%;
+
+}
+.tabs .tab-header > div {
+    cursor: pointer;
+}
+.tabs .tab-header > div.active {
+    color: red;
+}
+.tabs .tab-body{
+    position: relative;
+    height: calc(100% - 60px);
+    padding: 10px 5px;
+    width: 80%;
+}
+
+.tabs .tab-body > div {
+    background: yellow;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    margin-top:5px;
+    transform: scale(0.9);
+    transition: opacity 500ms ease-in-out 0ms, transform 500ms ease-in-out 0ms;
+}
+
+.tabs .tab-body > div.active{
+    top: 0px;
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* CATEGORIES PAGE */
+
+.categories-container{
+    margin: 100px auto 0;
+    width: 40%;
+}
+.categories-container h2{
+    text-align: center;
+}
+.categories-body{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+.category-btn-container{
+    margin: 20px;
+}
+.category-btn-container h5{
+    margin: 20px auto 0 0;
+    text-align: center;
+}
+.category-btn{
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 100px;
+    color: white;
+    margin: auto;
+    cursor: pointer;
 }
