@@ -1,0 +1,326 @@
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgb(0,0,0,0.1);
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(69,162,158,0.2);
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: rgba(64, 209, 139, 0.734);
+}
+
+body{
+    background-color: #e6e6e6;
+}
+
+.page .sidebar{
+    height: 100vh;
+    width: 250px;
+    background: linear-gradient(90deg,#7ef31f, #1dc257);
+    top: 0;
+    /*left: 0;INITIAL_CONFIG*/
+    left: -250px;
+    position: fixed;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all 1s ease;
+}
+
+.page .content{
+    /*margin-left: 250px;INITIAL_CONFIG*/
+    margin-left: 0px;
+    transition: all 1s ease;
+}
+
+body.active .page .sidebar{
+    /*left: -250px;INITIAL_CONFIG*/
+    left: 0px;
+}
+body.active .page .content{
+    /*margin-left: 0;INITIAL_CONFIG*/
+    margin-left: 250px;
+    /*width: 100%;INITIAL_CONFIG*/
+    width: auto;
+}
+
+.sidebar-header{
+    padding: 10px 25px 10px 15px;
+}
+.sidebar-logo-container{
+    background-color: rgb(0,0,0,0.1);
+    border-radius: 8px;
+    display: flex;
+    padding-left: 3px;
+}
+
+.logo-container{
+    max-width: 40px;
+    background-color: rgb(255,255,255,0.1);
+    border-radius: 8px;
+    margin: 8px;
+    padding: 6px 8px;
+}
+
+.logo-sidebar{
+    width: 100%;
+    height: auto;
+}
+
+.brand-name-container{
+    padding: 0px;
+    margin: 10px 10px 0px 2px;
+}
+
+.brand-name{
+    color: white;
+    margin: 0px;
+    line-height: 1.1rem;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.brand-subname{
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.navigation-list{
+    list-style-type: none;
+    padding: 0px 18px;
+    margin-top: 30px;
+}
+
+.navigation-list-item{
+    padding: 10px 18px 10px 18px;
+    border-radius: 8px;
+    margin: 15px 0px;
+}
+
+.navigation-list-item:hover{
+    background: rgb(0,0,0,0.05);
+    box-shadow: 0 0 0.4em rgb(255,255,255,0.1);
+    cursor: pointer;
+}
+
+.navigation-list-item.active{
+    background: rgb(0,0,0,0.1);
+    box-shadow: 0 0 0.4em rgb(255,255,255,0.1);
+}
+
+.navigation-link{
+    color: rgb(31,40,51,0.8);
+    letter-spacing: 0.5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.navigation-list-item:hover .navigation-link {
+    color: rgb(255,255,255,0.7);
+}
+
+.navigation-list-item.active .navigation-link {
+    color: rgb(255,255,255,0.7);
+    font-weight: 500;
+}
+
+.navigation-link i {
+    font-size: 20px;
+}
+
+.teams-list {
+    padding-left: 30px;
+    list-style-type: none;
+}
+
+.teams-list-item {
+    letter-spacing: 0.5px;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(31,40,51,0.8);
+    margin-bottom: 30px;
+}
+
+.teams-list-item i{
+    font-size: 10px;
+}
+
+.teams-title-container{
+    padding-left: 30px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.teams-title{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 17px;
+    color: rgb(31,40,51,0.8);
+    letter-spacing: 0.5px;
+}
+
+.navigation-bar{
+    background-color: rgb(245, 5, 5);
+    height: 50px;
+    padding: 38px 0;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 2px -2px #c5c6c7;
+}
+
+.sidebarToggle{
+    font-size: 16px;
+    background-color: #c5c6c7;
+    color: rgb(0,0,0,0.8);
+    /*margin-left: -19px;INITIAL_CONFIG*/
+    margin-left: 2px;
+    z-index: 999;
+    border-radius: 50px;
+    outline: none !important;
+    box-shadow: none !important;
+    transition: all 1s ease;
+}
+
+.sidebarToggle:hover{
+    color: white;
+}
+
+.sidebarToggle.active{
+    margin-left: 10px;;
+}
+
+.carousel-item {
+    height: 65vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+
+/*APORTES*/
+.tabs{
+    transition: all 1s ease;
+    background: #E3FFC7;
+    width: 80%;
+    margin: 30px auto;
+    display: flex;
+    height: 400px;
+}
+.tabs .tab-header {
+    width: 20%;
+    margin: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    
+}
+.tabs .tab-header > div {
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 1px solid #1D6855;
+    background: white;
+    text-align: center;
+    padding: 5px;
+}
+.tabs .tab-header > div.active {
+    background: #76C3AF;
+    color: white;
+}
+.tabs .tab-body{
+    position: relative;
+    width: 600px;
+    margin: 0 auto;
+
+}
+
+.tabs .tab-body > div {
+    padding-top: 20px;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    margin:5px auto;
+    transform: scale(0.9);
+    transition: opacity 500ms ease-in-out 0ms, transform 500ms ease-in-out 0ms;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+}
+
+.tabs .tab-body > div span{
+    color: #1D6855;
+}
+
+
+.tabs .tab-body > div img{
+    margin-top: 20px;
+    position: absolute;
+    right: 0;
+}
+
+.tabs .tab-body > div label{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.tab-image-container{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+.tab-image-container img{
+    width: 50px;
+}
+
+.tabs .tab-body > div.active{
+    top: 0px;
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* CATEGORIES PAGE */
+
+.categories-container{
+    margin: 100px auto 0;
+    width: 40%;
+}
+.categories-container h2{
+    text-align: center;
+}
+.categories-body{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+.category-btn-container{
+    margin: 20px;
+}
+.category-btn-container h5{
+    margin: 20px auto 0 0;
+    text-align: center;
+}
+.category-btn{
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 100px;
+    color: white;
+    margin: auto;
+    cursor: pointer;
+}
