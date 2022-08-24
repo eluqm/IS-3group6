@@ -211,7 +211,12 @@ body.active .page .content{
     top: 20%;
     left: 100px;
     transition: all 1s ease;
+    /*transform: translate(-50%,-50%);*/
+    width: 1300px;
+    height: 500px;
+    /*background: red;*/
 }
 body.active .tabs{
     left: 350px;
+    
 }

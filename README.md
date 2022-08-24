@@ -126,7 +126,6 @@ WorldCare es una alternativa amigable en comparción a las calculadoras de huell
  pip install Flask
  pip install PyMySQL
  pip install Flask-SQLAlchemy
- pip install Flask_User
 ```
 
 6. Crear la base de datos:
