@@ -9,7 +9,7 @@ class Config:
 
     # Configuracion de la base de datos
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    #SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:Angel1612@localhost:3306/huella_carbono"
+    #SQLALCHEMY_DATABASE_URI = "mysql+pymysql://user:12345678@localhost:3306/huella_carbono"
     SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:root@localhost:3306/huella_carbono"
 
     # Flask-User settings

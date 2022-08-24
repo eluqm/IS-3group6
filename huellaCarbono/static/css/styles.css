@@ -206,12 +206,148 @@ body.active .page .content{
 
 
 /*APORTES*/
+/*TABS HORIZONTALES*/
 .tabs{
     position: absolute;
     top: 20%;
-    left: 100px;
+    left: 250px;
     transition: all 1s ease;
+    background: #c1eecd;
+    height: 500px;
+    width: 60%;
+    padding: 20px 30px;
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: 5px 10px 5px #ccc;
 }
 body.active .tabs{
-    left: 350px;
+    left: 500px;
+    width: 57%;
+}
+
+.tabs .tab-header{
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.tabs .tab-header > div{
+    width: calc(100%/5);
+    text-align: center;
+    color: #888;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.tabs .tab-header > div > i{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.tabs .tab-header > div.active{
+    color: #0ccc13;
+}
+
+.tabs .tab-indicator{
+    position: relative;
+    width: calc(100%/5);
+    height: 5px;
+    background: #0ccc13;
+    left: 0px;
+    border-radius: 5px;
+    margin-bottom: 35px;
+    transition: all 500ms ease-in-out;
+}
+
+.tabs .tab-body{
+    position: relative;
+    height: calc(100%-60px);
+    padding: 10px 5px;
+}
+
+.tabs .tab-body > div {
+    position: absolute;
+    top: -200%;
+    opacity: 0;
+    margin-top: 5px;
+    transform: scale(0.9);
+    transition: opacity 800ms ease-in-out 0ms,
+        transform 500ms  ease-in-out 0ms;
+}
+
+.tabs .tab-body > div.active {
+    top: 0px;
+    opacity: 1;
+    transform: scale(1);
+    margin-top: 10px;
+}
+
+
+
+/*TABS VERTICALES*/
+.tabs-vertical{
+    position: absolute;
+    width: 1030px;
+    height: 360px;
+    overflow: hidden;
+}
+
+.tabs-vertical .tabs-vertical-header{
+    float: left;
+    width: 180px;
+    height: 100%;
+    border-right: 1px solid #ccc;
+    padding: 50px 0;
+}
+
+.tabs-vertical .tabs-vertical-header > div{
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #888;
+    cursor: pointer;
+    padding-left: 10px;
+}
+.tabs-vertical .tabs-vertical-header > div:hover,
+.tabs-vertical .tabs-vertical-header > div.active{
+    color: #0ccc13;
+}
+
+
+.tabs-vertical .tabs-vertical-header div i{
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.tabs-vertical .tabs-vertical-content{
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.tabs-vertical .tabs-vertical-content > div{
+    position:absolute;
+    text-align: center;
+    padding: 20px 20px;
+    top: -200%;
+    transition: all 500ms ease-in-out;
+}
+
+.tabs-vertical .tabs-vertical-content > div.active{
+    top: 0px;
+}
+
+.tabs-vertical .tabs-vertical-indicator{
+    position: absolute;
+    width: 4px;
+    height: 50px;
+    background:#0ccc13;
+    left: 180px;
+    top:50px;
+    transition: all 500ms ease-in-out;
 }
