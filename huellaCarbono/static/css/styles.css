@@ -207,9 +207,6 @@ body.active .page .content{
 
 /*APORTES*/
 .tabs{
-    position: absolute;
-    top: 20%;
-    left: 100px;
     transition: all 1s ease;
     /*transform: translate(-50%,-50%);*/
     width: 1300px;
@@ -219,4 +216,115 @@ body.active .page .content{
 body.active .tabs{
     left: 350px;
     
+}
+
+.tabs .tab-header {
+    width: 20%;
+    margin: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    
+}
+.tabs .tab-header > div {
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 1px solid #1D6855;
+    background: white;
+    text-align: center;
+    padding: 5px;
+}
+.tabs .tab-header > div.active {
+    background: #76C3AF;
+    color: white;
+}
+.tabs .tab-body{
+    position: relative;
+    width: 600px;
+    margin: 0 auto;
+
+}
+
+.tabs .tab-body > div {
+    padding-top: 20px;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    margin:5px auto;
+    transform: scale(0.9);
+    transition: opacity 500ms ease-in-out 0ms, transform 500ms ease-in-out 0ms;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+}
+
+.tabs .tab-body > div span{
+    color: #1D6855;
+}
+
+
+.tabs .tab-body > div img{
+    margin-top: 20px;
+    position: absolute;
+    right: 0;
+}
+
+.tabs .tab-body > div label{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.tab-image-container{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+.tab-image-container img{
+    width: 50px;
+}
+
+.tabs .tab-body > div.active{
+    top: 0px;
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* CATEGORIES PAGE */
+
+.categories-container{
+    margin: 100px auto 0;
+    width: 40%;
+}
+.categories-container h2{
+    text-align: center;
+}
+.categories-body{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+.category-btn-container{
+    margin: 20px;
+}
+.category-btn-container h5{
+    margin: 20px auto 0 0;
+    text-align: center;
+}
+.category-btn{
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 100px;
+    color: white;
+    margin: auto;
+    cursor: pointer;
 }
