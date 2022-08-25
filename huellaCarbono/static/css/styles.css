@@ -207,19 +207,8 @@ body.active .page .content{
 
 /*APORTES*/
 /*TABS HORIZONTALES*/
-.tabs{
-    position: absolute;
-    top: 20%;
-    left: 250px;
-    transition: all 1s ease;
-    background: #c1eecd;
-    height: 500px;
-    width: 60%;
-    padding: 20px 30px;
-    overflow: hidden;
-    border-radius: 30px;
-    box-shadow: 5px 10px 5px #ccc;
-}
+
+
 body.active .tabs{
     left: 500px;
     width: 57%;
