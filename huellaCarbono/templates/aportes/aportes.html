@@ -33,9 +33,9 @@
       <div id="carne" class="tabcontent" style="display: block;">
         <div class="alimentacion_carnes">
           <form action="" method="post">
-            <input type="checkbox" name="cb-nc" value="gusta"> No consumo Carne<br>
-            <input type="checkbox" name="cb-sc_1v" value="gusta"> Consumo carne 1 vez a la semana<br>
-            <input type="checkbox" name="cb-sc_2v" value="gusta"> Consumo carne 2 veces a la semana
+            <input type="checkbox" name="cb-consume_Carnes" value="gusta"> No consumo Carne<br>
+            <input type="checkbox" name="cb-sc_consume1v" value="gusta"> Consumo carne 1 vez a la semana<br>
+            <input type="checkbox" name="cb-sc_consume_2v" value="gusta"> Consumo carne 2 veces a la semana
             <p style="color:green ;">Perfecto! sabias que la La industria cárnica es uno de los sectores que más 
               contribuye al cambio climático. Según la Organización de las Naciones Unidas
               para la Alimentación y la Agricultura (FAO), el sector cárnico emite más gases
@@ -44,20 +44,29 @@
             </p>
             <input type="submit" value="Guardar">
           </form>
-
         </div>
-        
       </div>
        
       <div id="productos-organicos" class="tabcontent">
         <div class="aimentacion_productos-organicos">
-          
+          <form action="" method="post">
+            <input type="checkbox" name="cb-consumeAlimOrg" value="gusta"> Consumo alimentos orgánicos<br>
+            <input type="checkbox" name="cb-procuraConsumir" value="gusta"> Procuro consumir alimentos orgánicos casi siempre<br>
+            <input type="checkbox" name="cb-sc_consumeRaravez" value="gusta"> Consumo alimentos orgánicos de vez en cuando <br>
+            <input type="submit" value="Guardar">
+          </form>
         </div>
       </div>
        
       <div id="productos-granel" class="tabcontent">
-        <h3>energia_c</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non blanditiis voluptates, consequatur, ratione debitis quibusdam autem exercitationem provident, veniam impedit quae mollitia nobis a distinctio cum laborum corporis. Itaque, minus?</p>
+        <div class="alimentacion_productos-granel">
+          <form action="" method="post">
+            <input type="checkbox" name="cb-consumeProdGranel" value="gusta"> Consumo alimentos a granel<br>
+            <input type="checkbox" name="cb-procuraConsumirGranel" value="gusta"> Procuro consumir alimentos a granel casi siempre<br>
+            <input type="checkbox" name="cb-sc_consumeRaravezGranel" value="gusta"> Consumo alimentos a granel de vez en cuando <br>
+            <input type="submit" value="Guardar">
+          </form>
+        </div>
       </div>
     </div>
     <!--END ALIMENTACION-->
@@ -65,13 +74,16 @@
 
 
 
-    
+    <!--BEGIN HIGIENE-->
     <input type="radio" name="tabs" id="tabtwo">
     <label for="tabtwo">Higiene</label>
     <div class="tab">
-      <h1>Tab Higienes Content</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Nothing to show</p>
     </div>
+    <!--END HIGIENE-->
+
+
+    
     
     <input type="radio" name="tabs" id="tabthree">
     <label for="tabthree">Transporte</label>
