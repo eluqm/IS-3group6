@@ -3,71 +3,14 @@
 
 {% block content %}
 <div class="tabs">
-
-    <!--BEGIN ALIMENTACION-->
     <input type="radio" name="tabs" id="tabone" checked="checked">
     <label for="tabone">Alimentacion</label>
     <div class="tab">
-      <p>LLena y comparte con nosotros que aportes realizaste, y conoce cuanto has ayudado al planeta!!</p>
-      <div class="tabVertical">
 
-         
-        <button class="tablinks" onclick="openTab(event, 'carne', 'arrow1')">
-          <i class="fab fa-wordpress"></i>
-          Carne <span id="arrow1" class=" arrow fas fa-caret-right"></span>
-        </button>
-     
-        <button class="tablinks" onclick="openTab(event, 'productos-organicos', 'arrow2')">
-          <i class="fas fa-video"></i>
-          Productos Orgánicos
-          <span id="arrow2" class=" arrow fas fa-caret-right"></span>
-        </button>
-     
-        <button class="tablinks" onclick="openTab(event, 'productos-granel', 'arrow3')">
-          <i class="far fa-image"></i>
-          Productos a granel <span id="arrow3" class=" arrow fas fa-caret-right"></span>
-        </button>
- 
-      </div>
-       
-      <div id="carne" class="tabcontent" style="display: block;">
-        <div class="alimentacion_carnes">
-          <form action="" method="post">
-            <input type="checkbox" name="cb-nc" value="gusta"> No consumo Carne<br>
-            <input type="checkbox" name="cb-sc_1v" value="gusta"> Consumo carne 1 vez a la semana<br>
-            <input type="checkbox" name="cb-sc_2v" value="gusta"> Consumo carne 2 veces a la semana
-            <p style="color:green ;">Perfecto! sabias que la La industria cárnica es uno de los sectores que más 
-              contribuye al cambio climático. Según la Organización de las Naciones Unidas
-              para la Alimentación y la Agricultura (FAO), el sector cárnico emite más gases
-              de efecto invernadero que todo el transporte mundial junto
-              (14,5% del total de emisiones).
-            </p>
-            <input type="submit" value="Guardar">
-          </form>
-
-        </div>
-        
-      </div>
-       
-      <div id="productos-organicos" class="tabcontent">
-        <div class="aimentacion_productos-organicos">
-          
-        </div>
-      </div>
-       
-      <div id="productos-granel" class="tabcontent">
-        <h3>energia_c</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non blanditiis voluptates, consequatur, ratione debitis quibusdam autem exercitationem provident, veniam impedit quae mollitia nobis a distinctio cum laborum corporis. Itaque, minus?</p>
-      </div>
     </div>
-    <!--END ALIMENTACION-->
-
-
-
-
     
     <input type="radio" name="tabs" id="tabtwo">
-    <label for="tabtwo">Higiene</label>
+    <label for="tabtwo">Higienes</label>
     <div class="tab">
       <h1>Tab Higienes Content</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -81,7 +24,7 @@
     </div>
 
     <input type="radio" name="tabs" id="tabfor">
-    <label for="tabfor">Residuos</label>
+    <label for="tabfor">Eneriga</label>
     <div class="tab">
       <h1>Tab Energia Content</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -121,46 +64,52 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non blanditiis voluptates, consequatur, ratione debitis quibusdam autem exercitationem provident, veniam impedit quae mollitia nobis a distinctio cum laborum corporis. Itaque, minus?</p>
       </div>
       
+
+
+
+
+
+
     </div>
 
     <input type="radio" name="tabs" id="tabfive">
-    <label for="tabfive">Energia</label>
+    <label for="tabfive">Transporte</label>
     <div class="tab">
       <h1>Tab Trabsporte Content</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
      
 
       <div class="tabVertical">
-        <button class="tablinks" onclick="openTab(event, 'coding', 'arrow11')" id="defaultOpen">
+        <button class="tablinks" onclick="openTab(event, 'coding', 'arrow1')" id="defaultOpen">
           <i class="fas fa-laptop-code"></i>
            Coding 
-           <span id="arrow11" class="arrow fas fa-caret-right"></span>
+           <span id="arrow1" class="arrow fas fa-caret-right"></span>
           </button>
          
-        <button class="tablinks" onclick="openTab(event, 'wordPress', 'arrow12')">
+        <button class="tablinks" onclick="openTab(event, 'wordPress', 'arrow2')">
           <i class="fab fa-wordpress"></i>
-          WordPress <span id="arrow12" class=" arrow fas fa-caret-right"></span>
+          WordPress <span id="arrow2" class=" arrow fas fa-caret-right"></span>
         </button>
      
-        <button class="tablinks" onclick="openTab(event, 'videos', 'arrow13')">
+        <button class="tablinks" onclick="openTab(event, 'videos', 'arrow3')">
           <i class="fas fa-video"></i>
           Videos 
-          <span id="arrow13" class=" arrow fas fa-caret-right"></span>
+          <span id="arrow3" class=" arrow fas fa-caret-right"></span>
         </button>
      
-        <button class="tablinks" onclick="openTab(event, 'photoshop', 'arrow14')">
+        <button class="tablinks" onclick="openTab(event, 'photoshop', 'arrow4')">
           <i class="far fa-image"></i>
-          Photoshop <span id="arrow14" class=" arrow fas fa-caret-right"></span>
+          Photoshop <span id="arrow4" class=" arrow fas fa-caret-right"></span>
         </button>
   
-        <button class="tablinks" onclick="openTab(event, 'caratulas', 'arrow15')">
+        <button class="tablinks" onclick="openTab(event, 'caratulas', 'arrow5')">
           <i class="far fa-image"></i>
-          Caratulas <span id="arrow15" class=" arrow fas fa-caret-right"></span>
+          Caratulas <span id="arrow5" class=" arrow fas fa-caret-right"></span>
         </button>
 
-        <button class="tablinks" onclick="openTab(event, 'portafolios', 'arrow16')">
+        <button class="tablinks" onclick="openTab(event, 'portafolios', 'arrow6')">
             <i class="far fa-image"></i>
-            portafolios <span id="arrow16" class=" arrow fas fa-caret-right"></span>
+            portafolios <span id="arrow6" class=" arrow fas fa-caret-right"></span>
           </button>
       </div>
        

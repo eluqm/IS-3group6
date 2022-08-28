@@ -1,34 +1,29 @@
-let tabHeader = document.getElementsByClassName("tab-header")[0];
-let tabIndicator = document.getElementsByClassName("tab-indicator")[0];
-let tabBody = document.getElementsByClassName("tab-body")[0];
+$(document).ready(function() {
+    $(document).foundation();
+})
 
-let tabsPane = tabHeader.getElementsByTagName("div");
-for(let i = 0;i < tabsPane.length; i++){
-    tabsPane[i].addEventListener("click", function(){
-        tabHeader.getElementsByClassName("active")[0].classList.remove("active");
-        tabsPane[i].classList.add("active");
-
-        tabBody.getElementsByClassName("row-categoria active")[0].classList.remove("active");
-        //tabBody.getElementsByTagName("div")[i].classList.add("active");
-        tabBody.getElementsByClassName("row-categoria")[i].classList.add("active");
-        tabIndicator.style.left = `calc( calc(100%/5) * ${i})`;
+function openTab(evt, Services, arrows) {
+    var i, tabcontent, tablinks, tabArrow;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+     
+    tabArrow = document.getElementsByClassName("arrow");
+    for (i = 0; i < tabArrow.length; i++) {
+      tabArrow[i].style.display = "none";
+    }
    
-    });
-}
-
-function _class(name){
-    return document.getElementsByClassName(name);
-}
-
-let tabPanes = _class("tabs-vertical-header alimentacion")[0].getElementsByTagName("div");
-for(let i=0 ; i <tabPanes.length ; i++){
-    tabPanes[i].addEventListener("click", function(){
-        _class("tabs-vertical-header alimentacion")[0].getElementsByClassName("active")[0].classList.remove("active");
-        tabPanes[i].classList.add("active");
-
-        _class("tabs-vertical-indicator alimentacion")[0].style.top = `calc(50px + ${i*50}px)`;
-
-        _class("tabs-vertical-content alimentacion")[0].getElementsByClassName("active")[0].classList.remove("active");
-        _class("tabs-vertical-content alimentacion")[0].getElementsByTagName("div")[i].classList.add("active");
-    });
-}
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+     
+    document.getElementById(arrows).style.display = "block";
+    document.getElementById(Services).style.display = "block";
+    evt.currentTarget.className += " active";
+   
+  }
+   
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();

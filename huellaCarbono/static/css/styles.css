@@ -205,138 +205,174 @@ body.active .page .content{
   }
 
 
-/*APORTES*/
-/*TABS HORIZONTALES*/
 
 
-body.active .tabs{
-    left: 500px;
-    width: 57%;
+
+
+
+/**
+ * horizontal Tabs
+ */
+ .tabs {
+	display: flex;
+	flex-wrap: wrap;
+}
+.tabs label {
+	order: 1;
+	display: block;
+	padding: 1rem 2rem;
+	margin-right: 0.2rem;
+	cursor: pointer;
+  background: #26c60d;
+  font-weight: bold;
+  transition: background ease 0.2s;
+}
+.tabs .tab {
+  order: 99;
+  flex-grow: 1;
+	width: 100%;
+	display: none;
+  padding: 1rem;
+  background: #fff;
+}
+.tabs input[type="radio"] {
+	display: none;
+}
+.tabs input[type="radio"]:checked + label {
+	background: #fff;
+}
+.tabs input[type="radio"]:checked + label + .tab {
+	display: block;
 }
 
-.tabs .tab-header{
-    height: 60px;
-    display: flex;
-    align-items: center;
+@media (max-width: 45em) {
+  .tabs .tab,
+  .tabs label {
+    order: initial;
+  }
+  .tabs label {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 0.2rem;
+  }
 }
 
-.tabs .tab-header > div{
-    width: calc(100%/5);
-    text-align: center;
-    color: #888;
-    font-weight: 600;
-    cursor: pointer;
-    font-size: 14px;
-    text-transform: uppercase;
-    outline: none;
-}
-
-.tabs .tab-header > div > i{
-    display: block;
-    margin-bottom: 5px;
-}
-
-.tabs .tab-header > div.active{
-    color: #0ccc13;
-}
-
-.tabs .tab-indicator{
-    position: relative;
-    width: calc(100%/5);
-    height: 5px;
-    background: #0ccc13;
-    left: 0px;
-    border-radius: 5px;
-    margin-bottom: 35px;
-    transition: all 500ms ease-in-out;
-}
-
-.tabs .tab-body{
-    position: relative;
-    height: calc(100%-60px);
-    padding: 10px 5px;
-}
-
-.tabs .tab-body > div {
-    position: absolute;
-    top: -200%;
-    opacity: 0;
-    margin-top: 5px;
-    transform: scale(0.9);
-    transition: opacity 800ms ease-in-out 0ms,
-        transform 500ms  ease-in-out 0ms;
-}
-
-.tabs .tab-body > div.active {
-    top: 0px;
-    opacity: 1;
-    transform: scale(1);
-    margin-top: 10px;
-}
-
-
-
-/*TABS VERTICALES*/
-.tabs-vertical{
-    position: absolute;
-    width: 1030px;
-    height: 360px;
-    overflow: hidden;
-}
-
-.tabs-vertical .tabs-vertical-header{
-    float: left;
-    width: 180px;
-    height: 100%;
-    border-right: 1px solid #ccc;
-    padding: 50px 0;
-}
-
-.tabs-vertical .tabs-vertical-header > div{
-    height: 50px;
-    line-height: 50px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #888;
-    cursor: pointer;
-    padding-left: 10px;
-}
-.tabs-vertical .tabs-vertical-header > div:hover,
-.tabs-vertical .tabs-vertical-header > div.active{
-    color: #0ccc13;
+/**
+ * Generic Styling
+*/
+body {
+  background: #eee;
+  min-height: 100vh;
+	box-sizing: border-box;
+	padding-top: 10vh;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 0 auto;
+  font-size: 112%;
 }
 
 
-.tabs-vertical .tabs-vertical-header div i{
-    display: inline-block;
-    margin-left: 10px;
-    margin-right: 5px;
-}
 
-.tabs-vertical .tabs-vertical-content{
-    position: relative;
-    height: 100%;
-    overflow: hidden;
-}
+/*vertical tabs*/
 
-.tabs-vertical .tabs-vertical-content > div{
-    position:absolute;
-    text-align: center;
-    padding: 20px 20px;
-    top: -200%;
-    transition: all 500ms ease-in-out;
+ 
+.container2{
+  padding: 30px 40px;
 }
-
-.tabs-vertical .tabs-vertical-content > div.active{
-    top: 0px;
+ 
+/* Style the tab */
+.tabVertical {
+  float: left;
+  width: 20%;
+  height: 300px;
+  margin-top: -12px;
 }
-
-.tabs-vertical .tabs-vertical-indicator{
-    position: absolute;
-    width: 4px;
-    height: 50px;
-    background:#0ccc13;
-    left: 180px;
-    top:50px;
-    transition: all 500ms ease-in-out;
+ 
+/* Style the buttons inside the tab */
+.tabVertical button {
+  display: block;
+  color: black;
+  padding: 18px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.5s ease-in;
+  font-size: 17px;
+  margin: 15px;
+}
+ 
+/* Change background color of buttons on hover */
+.tabVertical button:hover {
+  background-color: rgb(91, 161, 227);
+ 
+}
+ 
+/* Create an active/current "tab button" class */
+.tabVertical button.active {
+  background-color: rgb(88, 88, 88);
+  color: white;
+}
+ 
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  /*border: 1px solid rgb(88, 88, 88);*/
+  width: 70%;
+  height: auto;
+  margin-left: 40px;
+  animation: blinker 0.6s linear;
+  display: none;
+  background: #ceeab7;
+}
+ 
+/* animation effects */
+@keyframes blinker {  
+    10% { opacity: 0; } 
+    100% { opacity: 1; }
+}
+ 
+.tabVertical .arrow {
+  color: rgb(15, 244, 7);
+  float: right;
+  font-size: 26px;
+  position: relative;
+  left: 25px;
+}
+ 
+@media (max-width: 800px) {
+  .tabVertical {
+    width: 30% !important;
+  }
+  .tabcontent{
+    width: 61%;
+  }
+}
+ 
+@media (max-width: 600px) {
+  .tabVertical, .tabcontent {
+    width: 100% !important;
+    margin: 0 auto;
+  }
+  .tabVertical button{
+    width: 100%;
+    margin: 10px 0px;
+    padding: 18px 10px;
+  }
+  .tabVertical .arrow {
+    display: none !important;
+  }
+}
+.text
+{
+   
+  font-weight: 900;
+  text-align: center;
+}
+h1 {
+  color: rgb(107, 0, 0);
+  font-size: 50px !important;
 }
