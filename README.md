@@ -73,15 +73,15 @@ WorldCare es una alternativa amigable en comparción a las calculadoras de huell
 - RF-002: Registro de Usuario
   El sistema permitirá a los usuarios registrarse. El usuario debe suministrar datos como: Nombre, Apellido, E-mail, Usuario y Password
 - RF-003: Consultar tema de interés
-  El sistema permitirá a los usuarios realizar busquedas relacionadas al tema de su interés
-- RF-004: Consultar huella de carbono
-  El sistema permitirá a los usuarios realizar el cálculo de su huella de carbono
+  El sistema permitirá a los usuarios realizar busquedas relacionadas al tema de su interés  
+- ~~RF-004: Consultar huella de carbono
+  El sistema permitirá a los usuarios realizar el cálculo de su huella de carbono~~
 - RF-005: Registro de Aportes
   El sistema permitirá a los usuarios llevar un registro de sus aportes
 - RF-006: Compartir Aportes
   El sistema permitirá a los usuarios compartir sus logros
-- RF-007: Cálculo por categorías
-  El sistema permitirá a los usuarios realizar el cálculo de su huella de carbono por categorías
+- ~~RF-007: Cálculo por categorías
+  El sistema permitirá a los usuarios realizar el cálculo de su huella de carbono por categorías~~
 - RF-008: Brindar Información
   El sistema ofrecerá al usuario información general acerca del cuidado ambiental (tips de cuidado ambiental, noticias favorables al medio ambiente, calendario de eventos)
 - RF-009: Publicación de Usuarios
