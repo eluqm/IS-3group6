@@ -376,3 +376,7 @@ h1 {
   color: rgb(107, 0, 0);
   font-size: 50px !important;
 }
+
+input{
+  width: auto;
+}
