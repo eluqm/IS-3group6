@@ -106,3 +106,13 @@ link: https://app.moqups.com/MCtx2luPEu6uTzCcZyKaxHwRoK6f3Dw2/view/page/ae973f34
 ### 6. Trello
 
 link: https://trello.com/b/3FwjQZeS/worldcare
+
+### 7. Etapas de Prueba
+
+#### 7.1. Planificación
+
+#### 7.2. Casos de Prueba
+
+#### 7.3. Reporte de Incidente
+
+#### 7.4. Reporte de Resultados
