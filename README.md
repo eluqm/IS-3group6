@@ -111,8 +111,16 @@ link: https://trello.com/b/3FwjQZeS/worldcare
 
 #### 7.1. Planificación
 
+![ScreenShot](/img/Plan.PNG)
+
 #### 7.2. Casos de Prueba
+
+![ScreenShot](/img/Pruebas.PNG)
 
 #### 7.3. Reporte de Incidente
 
+![ScreenShot](/img/Incidentes.PNG)
+
 #### 7.4. Reporte de Resultados
+
+![ScreenShot](/img/Reporte.PNG)
